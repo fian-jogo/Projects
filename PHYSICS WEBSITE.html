@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Fisika SMP–SMA Lengkap | Crimson Light</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+            --bg: #fefcfb;
+            --bg2: #fff7f5;
+            --bg3: #fdf0ee;
+            --surface: #ffffff;
+            --surface2: #fef5f3;
+            --border: #e8d0cc;
+            --border2: #f0dbd7;
+            --accent: #c41e3a;
+            --accent2: #a01830;
+            --accent3: #d43f52;
+            --accent4: #8b1a2b;
+            --accent5: #b22234;
+            --text: #2c1810;
+            --text2: #5c3d38;
+            --text3: #8c7068;
+            --yellow: #b8860b;
+            --card-a: #fffbfa;
+            --card-b: #fff8f6;
+            --card-c: #fff5f3;
+            --shadow: 0 2px 12px rgba(140, 60, 50, 0.06);
+            --shadow-lg: 0 8px 30px rgba(140, 60, 50, 0.10);
+            --gradient-hero: linear-gradient(135deg, #c41e3a 0%, #a01830 50%, #8b1a2b 100%);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        #sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 280px;
+            background: var(--bg2);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        #sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+        #sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #sidebar::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 2px;
+        }
+
+        .sidebar-header {
+            padding: 20px 20px 16px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg2);
+            z-index: 1;
+        }
+        .sidebar-header h1 {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.3;
+        }
+        .sidebar-header p {
+            font-size: 11px;
+            color: var(--text3);
+            margin-top: 4px;
+        }
+
+        .nav-section {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-section-label {
+            padding: 10px 20px 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text3);
+        }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 20px;
+            font-size: 13px;
+            color: var(--text2);
+            text-decoration: none;
+            transition: all 0.15s;
+            border-left: 2px solid transparent;
+        }
+        .nav-link:hover {
+            color: var(--accent);
+            background: var(--bg3);
+            border-left-color: var(--accent);
+        }
+        .nav-link.active {
+            color: var(--accent);
+            background: rgba(196, 30, 58, 0.06);
+            border-left-color: var(--accent);
+            font-weight: 500;
+        }
+        .nav-link .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: var(--text3);
+        }
+        .nav-link:hover .dot,
+        .nav-link.active .dot {
+            background: var(--accent);
+        }
+
+        /* MAIN */
+        #main {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+
+        .top-bar {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 4px rgba(140, 60, 50, 0.04);
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text2);
+            font-size: 20px;
+        }
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--text3);
+        }
+        .breadcrumb span {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            margin-bottom: 20px;
+            background: var(--gradient-hero);
+            border-radius: 20px;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .hero p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .pill {
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        /* CHAPTER */
+        .chapter {
+            scroll-margin-top: 70px;
+            margin-bottom: 60px;
+        }
+        .chapter-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border2);
+        }
+        .chapter-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            background: rgba(196, 30, 58, 0.10);
+            color: var(--accent);
+        }
+        .chapter-title {
+            flex: 1;
+        }
+        .chapter-title h2 {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .chapter-title p {
+            font-size: 13px;
+            color: var(--text3);
+        }
+
+        /* TOPIC */
+        .topic {
+            scroll-margin-top: 70px;
+            margin-bottom: 28px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.2s;
+        }
+        .topic:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .topic-header {
+            padding: 18px 24px;
+            background: var(--surface2);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.15s;
+        }
+        .topic-header:hover {
+            background: #fef0ed;
+        }
+        .topic-num {
+            background: var(--accent);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .topic-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            flex: 1;
+        }
+        .topic-toggle {
+            color: var(--text3);
+            font-size: 18px;
+            transition: transform 0.25s;
+        }
+        .topic.open .topic-toggle {
+            transform: rotate(180deg);
+        }
+        .topic-body {
+            display: none;
+            padding: 24px;
+        }
+        .topic.open .topic-body {
+            display: block;
+        }
+
+        /* CONTENT STYLES */
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 24px 0 10px;
+        }
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: var(--text2);
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        p strong {
+            color: var(--text);
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+            color: var(--text2);
+            margin-bottom: 12px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        li strong {
+            color: var(--text);
+        }
+
+        /* FORMULA BOX */
+        .formula-box {
+            background: #fdf5f3;
+            border: 1px solid var(--border2);
+            border-left: 3px solid var(--accent);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--accent2);
+            line-height: 1.8;
+        }
+        .formula-box.green {
+            border-left-color: #2d8a56;
+            color: #1a5c38;
+            background: #f2faf6;
+        }
+        .formula-box.purple {
+            border-left-color: #7b3fa3;
+            color: #4a1d6b;
+            background: #faf5fd;
+        }
+        .formula-box.orange {
+            border-left-color: #d4782f;
+            color: #7a3d10;
+            background: #fef9f4;
+        }
+        .formula-box.red {
+            border-left-color: var(--accent5);
+            color: #8b1a2b;
+            background: #fef5f6;
+        }
+
+        /* CONCEPT BOX */
+        .concept-box {
+            background: rgba(196, 30, 58, 0.04);
+            border: 1px solid rgba(196, 30, 58, 0.15);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+        .concept-box .label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .concept-box.yellow {
+            background: rgba(184, 134, 11, 0.05);
+            border-color: rgba(184, 134, 11, 0.2);
+        }
+        .concept-box.yellow .label {
+            color: #8b6914;
+        }
+        .concept-box.green {
+            background: rgba(45, 138, 86, 0.05);
+            border-color: rgba(45, 138, 86, 0.2);
+        }
+        .concept-box.green .label {
+            color: #2d8a56;
+        }
+        .concept-box.red {
+            background: rgba(178, 34, 52, 0.04);
+            border-color: rgba(178, 34, 52, 0.15);
+        }
+        .concept-box.red .label {
+            color: var(--accent5);
+        }
+
+        /* EXAMPLE */
+        .example {
+            background: #fffdfc;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 1px solid var(--border2);
+        }
+        .example-header {
+            background: #fef8f6;
+            padding: 10px 18px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border2);
+        }
+        .example-header::before {
+            content: '✦';
+            font-size: 10px;
+        }
+        .example-body {
+            padding: 18px;
+        }
+        .example-body .question {
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+        .example-body .step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 22px;
+            height: 22px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-text {
+            color: var(--text2);
+            flex: 1;
+        }
+        .step-text code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #fdf5f3;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--accent2);
+        }
+        .answer-box {
+            margin-top: 14px;
+            background: rgba(45, 138, 86, 0.08);
+            border: 1px solid rgba(45, 138, 86, 0.2);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: #1a5c38;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .answer-box::before {
+            content: '✓ Jawaban: ';
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* TABLE */
+        .math-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .math-table th {
+            background: #fef5f3;
+            color: var(--text);
+            padding: 10px 14px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid var(--border2);
+        }
+        .math-table td {
+            padding: 8px 14px;
+            border: 1px solid var(--border2);
+            color: var(--text2);
+            text-align: center;
+        }
+        .math-table tr:nth-child(even) td {
+            background: #fffdfc;
+        }
+        .math-table td strong {
+            color: var(--accent);
+        }
+
+        /* GRID */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .mini-card {
+            background: #fffdfc;
+            border: 1px solid var(--border2);
+            border-radius: 10px;
+            padding: 14px;
+        }
+        .mini-card .title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .mini-card .val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            color: var(--accent2);
+        }
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: var(--border2);
+            margin: 32px 0;
+        }
+
+        /* SCROLL TO TOP */
+        #scrollTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            box-shadow: 0 4px 16px rgba(196, 30, 58, 0.35);
+            transition: transform 0.2s;
+        }
+        #scrollTop:hover {
+            transform: scale(1.1);
+        }
+        #scrollTop.show {
+            display: flex;
+        }
+
+        /* PROGRESS */
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 280px;
+            right: 0;
+            height: 3px;
+            background: var(--border2);
+            z-index: 101;
+        }
+        #progress-bar {
+            height: 100%;
+            background: var(--gradient-hero);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* SUB LIST */
+        .sub-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 10px 0;
+        }
+        .sub-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text2);
+            font-size: 14px;
+            margin: 0;
+        }
+        .sub-list li::before {
+            content: '→';
+            color: var(--accent);
+            font-size: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            background: #fdf5f3;
+            padding: 1px 6px;
+            border-radius: 4px;
+            color: var(--accent2);
+        }
+
+        /* ANALOGY */
+        .analogy {
+            background: rgba(184, 134, 11, 0.04);
+            border-left: 3px solid #b8860b;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+            font-size: 14px;
+            color: var(--text2);
+        }
+        .analogy strong {
+            color: #8b6914;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            #sidebar {
+                transform: translateX(-100%);
+            }
+            #sidebar.open {
+                transform: translateX(0);
+            }
+            #main {
+                margin-left: 0;
+            }
+            #progress {
+                left: 0;
+            }
+            .hamburger {
+                display: block;
+            }
+            .content {
+                padding: 24px 16px 60px;
+            }
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .top-bar {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 40px 16px 36px;
+                border-radius: 14px;
+            }
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+        #overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h1>⚛️ Fisika SMP–SMA</h1>
+            <p>Materi Lengkap & Terstruktur</p>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 1 — Dasar & Gerak Lurus</div>
+            <a href="#f1t1" class="nav-link"><span class="dot"></span>Pendahuluan & Metode Ilmiah</a>
+            <a href="#f1t2" class="nav-link"><span class="dot"></span>Besaran, Satuan & Pengukuran</a>
+            <a href="#f1t3" class="nav-link"><span class="dot"></span>Gerak Lurus (Kinematika 1D)</a>
+            <a href="#f1t4" class="nav-link"><span class="dot"></span>Vektor</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 2 — Dinamika & Energi</div>
+            <a href="#f2t1" class="nav-link"><span class="dot"></span>Gaya & Hukum Newton</a>
+            <a href="#f2t2" class="nav-link"><span class="dot"></span>Usaha dan Energi</a>
+            <a href="#f2t3" class="nav-link"><span class="dot"></span>Momentum & Impuls</a>
+            <a href="#f2t4" class="nav-link"><span class="dot"></span>Gravitasi Newton</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 3 — Benda Tegar & Fluida</div>
+            <a href="#f3t1" class="nav-link"><span class="dot"></span>Gerak Melingkar</a>
+            <a href="#f3t2" class="nav-link"><span class="dot"></span>Keseimbangan & Rotasi</a>
+            <a href="#f3t3" class="nav-link"><span class="dot"></span>Elastisitas</a>
+            <a href="#f3t4" class="nav-link"><span class="dot"></span>Fluida</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 4 — Termodinamika</div>
+            <a href="#f4t1" class="nav-link"><span class="dot"></span>Suhu, Kalor & Pemuaian</a>
+            <a href="#f4t2" class="nav-link"><span class="dot"></span>Teori Kinetik Gas & TD</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 5 — Getaran & Gelombang</div>
+            <a href="#f5t1" class="nav-link"><span class="dot"></span>Getaran Harmonis Sederhana</a>
+            <a href="#f5t2" class="nav-link"><span class="dot"></span>Gelombang Mekanik</a>
+            <a href="#f5t3" class="nav-link"><span class="dot"></span>Bunyi</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 6 — Optik</div>
+            <a href="#f6t1" class="nav-link"><span class="dot"></span>Optik Geometri</a>
+            <a href="#f6t2" class="nav-link"><span class="dot"></span>Optik Fisis</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 7 — Listrik & Magnet</div>
+            <a href="#f7t1" class="nav-link"><span class="dot"></span>Listrik Statis</a>
+            <a href="#f7t2" class="nav-link"><span class="dot"></span>Listrik Dinamis (DC)</a>
+            <a href="#f7t3" class="nav-link"><span class="dot"></span>Medan Magnet</a>
+            <a href="#f7t4" class="nav-link"><span class="dot"></span>Induksi Elektromagnetik</a>
+            <a href="#f7t5" class="nav-link"><span class="dot"></span>Arus Bolak-Balik (AC)</a>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-label">Fase 8 — Fisika Modern</div>
+            <a href="#f8t1" class="nav-link"><span class="dot"></span>Relativitas Khusus</a>
+            <a href="#f8t2" class="nav-link"><span class="dot"></span>Gejala Kuantum</a>
+            <a href="#f8t3" class="nav-link"><span class="dot"></span>Fisika Atom</a>
+            <a href="#f8t4" class="nav-link"><span class="dot"></span>Inti & Radioaktivitas</a>
+        </div>
+    </nav>
+
+    <div id="overlay"></div>
+    <div id="progress"><div id="progress-bar"></div></div>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="top-bar">
+            <button class="hamburger" id="menuBtn" onclick="toggleMenu()">☰</button>
+            <div class="breadcrumb">Fisika SMP–SMA &rsaquo; <span>Materi Lengkap</span></div>
+        </div>
+
+        <div class="content">
+            <!-- HERO -->
+            <div class="hero">
+                <div class="hero-badge">⚛️ Materi Komprehensif</div>
+                <h1>Fisika SMP–SMA<br>Lengkap & Terstruktur</h1>
+                <p>Dari gerak lurus hingga fisika modern — disajikan dengan rumus, konsep, dan contoh soal yang mudah dipahami.</p>
+                <div class="hero-pills">
+                    <span class="pill">8 Fase Utama</span>
+                    <span class="pill">28 Topik</span>
+                    <span class="pill">Rumus Lengkap</span>
+                    <span class="pill">Contoh Soal</span>
+                    <span class="pill">Konsep Fundamental</span>
+                </div>
+            </div>
+
+            <!-- ===== FASE 1 ===== -->
+            <div class="chapter" id="fase-1">
+                <div class="chapter-header">
+                    <div class="chapter-icon">📏</div>
+                    <div class="chapter-title">
+                        <h2>Fase 1: Dasar-Dasar & Gerak Lurus</h2>
+                        <p>4 topik · Fondasi pengukuran dan kinematika</p>
+                    </div>
+                </div>
+
+                <!-- F1T1 -->
+                <div class="topic" id="f1t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">1</div>
+                        <h3>Pendahuluan Fisika & Metode Ilmiah</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="section-title">Hakikat Fisika</div>
+                        <p>Fisika adalah ilmu yang mempelajari <strong>gejala alam tak hidup</strong> — materi, energi, dan interaksinya. Fisika mencakup produk (fakta, konsep, hukum), proses (metode ilmiah), dan sikap (objektif, teliti, terbuka).</p>
+                        <div class="analogy"><strong>Analogi:</strong> Fisika seperti "detektif alam semesta" — mengamati petunjuk (data), menyusun hipotesis, lalu menguji kebenarannya melalui eksperimen.</div>
+                        <div class="formula-box green">
+                            Langkah Metode Ilmiah:
+                            1. Observasi → 2. Rumusan Masalah → 3. Hipotesis
+                            → 4. Eksperimen → 5. Analisis Data → 6. Kesimpulan → 7. Publikasi
+                        </div>
+                        <ul class="sub-list">
+                            <li><strong>Ruang Lingkup:</strong> Mekanika, Termodinamika, Optik, Listrik-Magnet, Fisika Modern</li>
+                            <li><strong>Keselamatan Lab:</strong> Kenali simbol bahaya, gunakan alat sesuai fungsi, patuhi tata tertib</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- F1T2 -->
+                <div class="topic" id="f1t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">2</div>
+                        <h3>Besaran, Satuan, dan Pengukuran</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="section-title">Besaran Pokok & Turunan</div>
+                        <table class="math-table">
+                            <tr><th>Besaran Pokok</th><th>Satuan SI</th><th>Dimensi</th></tr>
+                            <tr><td>Panjang</td><td>meter (m)</td><td>[L]</td></tr>
+                            <tr><td>Massa</td><td>kilogram (kg)</td><td>[M]</td></tr>
+                            <tr><td>Waktu</td><td>sekon (s)</td><td>[T]</td></tr>
+                            <tr><td>Suhu</td><td>kelvin (K)</td><td>[θ]</td></tr>
+                            <tr><td>Kuat Arus</td><td>ampere (A)</td><td>[I]</td></tr>
+                            <tr><td>Intensitas Cahaya</td><td>kandela (cd)</td><td>[J]</td></tr>
+                            <tr><td>Jumlah Zat</td><td>mol (mol)</td><td>[N]</td></tr>
+                        </table>
+                        <div class="formula-box">
+                            Angka Penting (SMA):
+                            • Penjumlahan: ikuti desimal paling sedikit
+                            • Perkalian: ikuti angka penting paling sedikit
+                            • Notasi ilmiah: a × 10ⁿ (1 ≤ a &lt; 10)
+
+                            Alat ukur: Jangka sorong (0,05 mm), Mikrometer (0,01 mm)
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — Angka Penting</div>
+                            <div class="example-body">
+                                <div class="question">Hitung 12,34 + 5,6 dengan aturan angka penting.</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text"><code>12,34 + 5,6 = 17,94</code></span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text">5,6 punya 1 desimal → bulatkan ke 1 desimal: <strong>17,9</strong></span></div>
+                                <div class="answer-box">Hasil = 17,9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F1T3 -->
+                <div class="topic" id="f1t3">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">3</div>
+                        <h3>Gerak Lurus (Kinematika 1D)</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box">
+                            GLB (kecepatan tetap): s = v × t (grafik v-t: garis horizontal)
+
+                            GLBB (percepatan tetap a):
+                            v = v₀ + a·t
+                            s = v₀·t + ½a·t²
+                            v² = v₀² + 2a·s
+
+                            Gerak Vertikal: g = 9,8 m/s² (≈10 m/s²)
+                            Jatuh bebas: v₀=0, a=g; Vertikal ke atas: a=−g
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — GLBB</div>
+                            <div class="example-body">
+                                <div class="question">Mobil dari diam dipercepat 3 m/s² selama 8 detik. Berapa jarak tempuhnya?</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text">v₀=0, a=3, t=8</span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text"><code>s = 0 + ½(3)(64) = 96 m</code></span></div>
+                                <div class="answer-box">Jarak = 96 meter</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F1T4 -->
+                <div class="topic" id="f1t4">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">4</div>
+                        <h3>Vektor</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="analogy"><strong>Analogi:</strong> Vektor adalah "panah" — punya arah dan besar. Kecepatan 60 km/jam <strong>ke utara</strong> adalah vektor; kelajuan 60 km/jam (tanpa arah) adalah skalar.</div>
+                        <div class="formula-box purple">
+                            Resultan dua vektor dengan sudut α:
+                            R = √(A² + B² + 2AB cos α)
+
+                            Komponen: Ax = A cos θ, Ay = A sin θ
+                            Resultan komponen: R = √(Rx² + Ry²), θ = arctan(Ry/Rx)
+
+                            Dot product: A·B = AB cos θ
+                            Cross product: |A×B| = AB sin θ
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 2 ===== -->
+            <div class="chapter" id="fase-2">
+                <div class="chapter-header">
+                    <div class="chapter-icon">⚡</div>
+                    <div class="chapter-title">
+                        <h2>Fase 2: Penyebab Gerak (Dinamika) & Energi</h2>
+                        <p>4 topik · Gaya, energi, momentum, gravitasi</p>
+                    </div>
+                </div>
+
+                <!-- F2T1 -->
+                <div class="topic" id="f2t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">5</div>
+                        <h3>Gaya dan Hukum Newton</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            Hukum I Newton (Kelembaman): ΣF = 0 → benda diam/GLB
+                            Hukum II Newton: ΣF = m·a
+                            Hukum III Newton: F_aksi = −F_reaksi
+
+                            Gaya Gesek (SMA):
+                            Statis: fs ≤ μs·N ; Kinetis: fk = μk·N
+
+                            Gaya Berat: w = m·g
+                            Gaya Normal: ⊥ bidang sentuh
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — Bidang Miring</div>
+                            <div class="example-body">
+                                <div class="question">Balok 5 kg di bidang miring 30° (tanpa gesekan). Tentukan percepatannya. (g=10)</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text">Gaya penggerak = w sin θ = <code>5·10·sin30° = 25 N</code></span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text"><code>a = F/m = 25/5 = 5 m/s²</code></span></div>
+                                <div class="answer-box">Percepatan = 5 m/s²</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F2T2 -->
+                <div class="topic" id="f2t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">6</div>
+                        <h3>Usaha dan Energi</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box green">
+                            Usaha: W = F·s·cos θ (satuan Joule)
+                            Energi Kinetik: EK = ½mv²
+                            Energi Potensial Gravitasi: EP = mgh
+                            Energi Potensial Pegas: EP = ½k·x²
+
+                            Hukum Kekekalan Energi Mekanik (tanpa gesekan):
+                            EM = EK + EP = konstan
+
+                            Daya: P = W/t = F·v (Watt)
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — Kekekalan Energi</div>
+                            <div class="example-body">
+                                <div class="question">Bola 0,5 kg jatuh dari ketinggian 20 m. Berapa kecepatan saat menyentuh tanah? (g=10)</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text">EM atas = mgh = <code>0,5·10·20 = 100 J</code></span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text">EM bawah = ½mv² → <code>100 = ½·0,5·v² → v² = 400 → v = 20 m/s</code></span></div>
+                                <div class="answer-box">v = 20 m/s</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F2T3 -->
+                <div class="topic" id="f2t3">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">7</div>
+                        <h3>Momentum dan Impuls</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box purple">
+                            Momentum: p = m·v (kg·m/s)
+                            Impuls: J = F·Δt = Δp
+                            Hukum Kekekalan Momentum (tumbukan): Σp_awal = Σp_akhir
+
+                            Tumbukan (koefisien restitusi e):
+                            • Lenting sempurna: e=1, EK kekal
+                            • Lenting sebagian: 0&lt;e&lt;1
+                            • Tidak lenting: e=0, benda menyatu
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F2T4 -->
+                <div class="topic" id="f2t4">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">8</div>
+                        <h3>Gravitasi Newton</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box red">
+                            Hukum Gravitasi Umum: F = G·M·m/r²
+                            G = 6,67×10⁻¹¹ N·m²/kg²
+
+                            Percepatan gravitasi: g = G·M/R²
+                            Energi Potensial Gravitasi: EP = −G·M·m/r
+
+                            Hukum Kepler III: T² ∝ R³
+                            Kecepatan orbit satelit: v = √(G·M/r)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 3 ===== -->
+            <div class="chapter" id="fase-3">
+                <div class="chapter-header">
+                    <div class="chapter-icon">🔄</div>
+                    <div class="chapter-title">
+                        <h2>Fase 3: Mekanika Benda Tegar & Fluida</h2>
+                        <p>4 topik · Rotasi, elastisitas, fluida</p>
+                    </div>
+                </div>
+
+                <!-- F3T1 -->
+                <div class="topic" id="f3t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">9</div>
+                        <h3>Gerak Melingkar</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            Kecepatan sudut: ω = θ/t (rad/s)
+                            Hubungan linear-sudut: v = ω·r
+                            Percepatan sentripetal: as = v²/r = ω²·r
+                            Gaya sentripetal: Fs = m·as = m·v²/r
+
+                            Hubungan roda: sepusat (ω sama), bersinggungan/rantai (v sama)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F3T2 -->
+                <div class="topic" id="f3t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">10</div>
+                        <h3>Keseimbangan & Dinamika Rotasi</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box green">
+                            Momen Gaya (Torsi): τ = r×F = rF sin θ
+                            Keseimbangan: ΣF=0 DAN Στ=0
+
+                            Momen Inersia: I = Σm·r²
+                            Hukum II Newton Rotasi: Στ = I·α
+                            Energi Kinetik Rotasi: EK_rot = ½Iω²
+                            Momentum Sudut: L = I·ω (kekal jika Στ=0)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F3T3 -->
+                <div class="topic" id="f3t3">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">11</div>
+                        <h3>Elastisitas Zat Padat</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box purple">
+                            Tegangan: σ = F/A
+                            Regangan: ε = ΔL/L₀
+                            Modulus Young: E = σ/ε
+
+                            Hukum Hooke: F = −k·x
+                            EP Pegas: EP = ½k·x²
+                            Susunan pegas: Seri (1/k=Σ1/kᵢ), Paralel (k=Σkᵢ)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F3T4 -->
+                <div class="topic" id="f3t4">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">12</div>
+                        <h3>Fluida</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box red">
+                            Tekanan Hidrostatis: P = ρ·g·h
+                            Hukum Pascal: P₁ = P₂ → F₁/A₁ = F₂/A₂
+                            Hukum Archimedes: FA = ρ_fluida·g·V_tercelup
+
+                            Fluida Dinamis (SMA):
+                            Debit: Q = A·v (kontinuitas: A₁v₁ = A₂v₂)
+                            Bernoulli: P + ½ρv² + ρgh = konstan
+                            Tangki bocor (Torricelli): v = √(2gh)
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — Archimedes</div>
+                            <div class="example-body">
+                                <div class="question">Benda volume 0,02 m³ terapung dengan ¾ bagian dalam air (ρ=1000 kg/m³). Berapa gaya apung?</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text">V_tercelup = ¾ × 0,02 = 0,015 m³</span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text"><code>FA = 1000·10·0,015 = 150 N</code></span></div>
+                                <div class="answer-box">Gaya apung = 150 N</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 4 ===== -->
+            <div class="chapter" id="fase-4">
+                <div class="chapter-header">
+                    <div class="chapter-icon">🔥</div>
+                    <div class="chapter-title">
+                        <h2>Fase 4: Termodinamika</h2>
+                        <p>2 topik · Kalor, suhu, dan hukum termodinamika</p>
+                    </div>
+                </div>
+
+                <!-- F4T1 -->
+                <div class="topic" id="f4t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">13</div>
+                        <h3>Suhu, Kalor, dan Pemuaian</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            Konversi suhu: C/5 = (F−32)/9 = R/4 = (K−273)/5
+                            Pemuaian panjang: ΔL = L₀·α·ΔT
+                            Kalor: Q = m·c·ΔT (perubahan suhu)
+                            Kalor laten: Q = m·L (perubahan wujud)
+                            Asas Black: Q_lepas = Q_terima
+
+                            Perpindahan Kalor:
+                            Konduksi: H = k·A·ΔT/L
+                            Radiasi: P = e·σ·A·T⁴ (σ=5,67×10⁻⁸)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F4T2 -->
+                <div class="topic" id="f4t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">14</div>
+                        <h3>Teori Kinetik Gas & Termodinamika</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box green">
+                            Gas Ideal: PV = nRT = NkT (R=8,314, k=1,38×10⁻²³)
+                            EK_rata = ³⁄₂kT (monoatomik)
+                            v_rms = √(3kT/m) = √(3RT/Mr)
+
+                            Hukum I TD: ΔU = Q − W
+                            Usaha gas: W = P·ΔV (isobarik)
+                            Proses: Isotermal, Isokhorik, Isobarik, Adiabatik
+
+                            Efisiensi Carnot: η = 1 − T₂/T₁
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 5 ===== -->
+            <div class="chapter" id="fase-5">
+                <div class="chapter-header">
+                    <div class="chapter-icon">〰️</div>
+                    <div class="chapter-title">
+                        <h2>Fase 5: Getaran, Gelombang & Bunyi</h2>
+                        <p>3 topik · Osilasi dan perambatan energi</p>
+                    </div>
+                </div>
+
+                <!-- F5T1 -->
+                <div class="topic" id="f5t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">15</div>
+                        <h3>Getaran Harmonis Sederhana</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box purple">
+                            Simpangan: y = A sin(ωt)
+                            Kecepatan: v = ωA cos(ωt)
+                            Percepatan: a = −ω²A sin(ωt) = −ω²y
+
+                            Bandul: T = 2π√(L/g)
+                            Pegas: T = 2π√(m/k)
+                            Energi total GHS: E = ½kA²
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F5T2 -->
+                <div class="topic" id="f5t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">16</div>
+                        <h3>Gelombang Mekanik</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box red">
+                            Cepat rambat: v = λ·f
+                            Gelombang berjalan: y = ±A sin(ωt ∓ kx), k=2π/λ
+
+                            Gelombang stasioner ujung tetap: simpul di ujung
+                            Gelombang stasioner ujung bebas: perut di ujung
+
+                            Gejala: Pemantulan, Pembiasan, Difraksi, Interferensi, Polarisasi
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F5T3 -->
+                <div class="topic" id="f5t3">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">17</div>
+                        <h3>Bunyi</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            Intensitas: I = P/A (W/m²)
+                            Taraf Intensitas: TI = 10 log(I/I₀) dB, I₀=10⁻¹²
+
+                            Efek Doppler: fp = fs(v±vp)/(v±vs)
+
+                            Pipa Organa Terbuka: fn = n·v/(2L), n=1,2,3...
+                            Pipa Organa Tertutup: fn = (2n−1)·v/(4L), n=1,2,3...
+                            Pelayangan: fL = |f₁−f₂|
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — Efek Doppler</div>
+                            <div class="example-body">
+                                <div class="question">Ambulans dengan sirine 800 Hz mendekat pada 30 m/s. Pendengar diam. Berapa frekuensi terdengar? (v=340 m/s)</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text"><code>fp = 800 × 340/(340−30) = 800 × 340/310</code></span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text"><code>fp = 800 × 1,097 ≈ 877,4 Hz</code></span></div>
+                                <div class="answer-box">Frekuensi terdengar ≈ 877 Hz</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 6 ===== -->
+            <div class="chapter" id="fase-6">
+                <div class="chapter-header">
+                    <div class="chapter-icon">🔬</div>
+                    <div class="chapter-title">
+                        <h2>Fase 6: Optik</h2>
+                        <p>2 topik · Cahaya, cermin, lensa, dan gelombang elektromagnetik</p>
+                    </div>
+                </div>
+
+                <!-- F6T1 -->
+                <div class="topic" id="f6t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">18</div>
+                        <h3>Optik Geometri</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box green">
+                            Hukum Pemantulan: θi = θr
+                            Hukum Snellius: n₁ sin θ₁ = n₂ sin θ₂
+                            Sudut kritis: sin θc = n₂/n₁ (n₁>n₂)
+
+                            Cermin/Lensa: 1/f = 1/s + 1/s'
+                            Perbesaran: M = s'/s = h'/h
+                            Kekuatan lensa: P = 1/f (dioptri, f dalam meter)
+
+                            Alat Optik: Lup, Mikroskop, Teropong
+                            Mata: Miopi (lensa cekung), Hipermetropi (lensa cembung)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F6T2 -->
+                <div class="topic" id="f6t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">19</div>
+                        <h3>Optik Fisis</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box purple">
+                            Interferensi Young: d sin θ = mλ (terang), m=0,1,2...
+                            Celah tunggal (gelap): d sin θ = nλ, n=1,2,3...
+                            Kisi difraksi: d sin θ = nλ, d=1/N
+
+                            Polarisasi Malus: I = I₀ cos²θ
+                            Sudut Brewster: tan θB = n₂/n₁
+
+                            Spektrum EM: Radio → Mikro → IR → Tampak → UV → Sinar-X → Gamma
+                            c = 3×10⁸ m/s, c = λf
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 7 ===== -->
+            <div class="chapter" id="fase-7">
+                <div class="chapter-header">
+                    <div class="chapter-icon">⚡</div>
+                    <div class="chapter-title">
+                        <h2>Fase 7: Listrik & Magnet</h2>
+                        <p>5 topik · Muatan, arus, medan magnet, induksi, AC</p>
+                    </div>
+                </div>
+
+                <!-- F7T1 -->
+                <div class="topic" id="f7t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">20</div>
+                        <h3>Listrik Statis (Elektrostatika)</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            Hukum Coulomb: F = k·Q·q/r² (k=9×10⁹ N·m²/C²)
+                            Medan Listrik: E = F/q = k·Q/r²
+                            Potensial Listrik: V = k·q/r
+                            Energi Potensial: EP = k·Q·q/r
+
+                            Kapasitor: C = Q/V, C = ε₀A/d (keping sejajar)
+                            Energi kapasitor: W = ½CV²
+                            Susunan: Seri (1/C=Σ1/Cᵢ), Paralel (C=ΣCᵢ)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F7T2 -->
+                <div class="topic" id="f7t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">21</div>
+                        <h3>Listrik Dinamis (Arus Searah DC)</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box green">
+                            Hukum Ohm: V = I·R
+                            Hambatan kawat: R = ρ·L/A
+                            Daya Listrik: P = V·I = I²R = V²/R
+                            Energi: W = P·t = V·I·t
+
+                            Hukum Kirchhoff I: ΣI_masuk = ΣI_keluar
+                            Hukum Kirchhoff II: Σε + ΣIR = 0 (loop)
+
+                            Seri: R_total = ΣR, arus sama
+                            Paralel: 1/R_total = Σ1/R, tegangan sama
+                        </div>
+                        <div class="example">
+                            <div class="example-header">Contoh — Rangkaian Campuran</div>
+                            <div class="example-body">
+                                <div class="question">R₁=4Ω dan R₂=6Ω paralel, lalu diseri dengan R₃=2Ω. Tegangan sumber 12V. Hitung arus total.</div>
+                                <div class="step"><span class="step-num">1</span><span class="step-text">R_paralel = <code>(4×6)/(4+6) = 24/10 = 2,4 Ω</code></span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text">R_total = <code>2,4 + 2 = 4,4 Ω</code></span></div>
+                                <div class="step"><span class="step-num">3</span><span class="step-text"><code>I = V/R = 12/4,4 ≈ 2,73 A</code></span></div>
+                                <div class="answer-box">Arus total ≈ 2,73 A</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F7T3 -->
+                <div class="topic" id="f7t3">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">22</div>
+                        <h3>Medan Magnet</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box purple">
+                            Kawat lurus panjang: B = μ₀I/(2πa)
+                            Kawat melingkar (pusat): B = μ₀I/(2r)
+                            Solenoida (pusat): B = μ₀nI
+                            Toroida: B = μ₀NI/(2πr)
+                            μ₀ = 4π×10⁻⁷ T·m/A
+
+                            Gaya Lorentz kawat: F = B·I·L·sin θ
+                            Gaya Lorentz muatan: F = q·v·B·sin θ
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F7T4 -->
+                <div class="topic" id="f7t4">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">23</div>
+                        <h3>Induksi Elektromagnetik</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box red">
+                            Fluks Magnetik: Φ = B·A·cos θ
+                            Hukum Faraday: ε = −N·dΦ/dt
+                            Hukum Lenz: arus induksi melawan perubahan fluks
+
+                            GGL kawat bergerak: ε = B·L·v
+                            Transformator: Vp/Vs = Np/Ns, efisiensi = Ps/Pp×100%
+                            Induktansi diri: ε = −L·dI/dt
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F7T5 -->
+                <div class="topic" id="f7t5">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">24</div>
+                        <h3>Arus Bolak-Balik (AC)</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            V = Vm sin ωt, I = Im sin(ωt±φ)
+                            Nilai efektif: Vef = Vm/√2, Ief = Im/√2
+
+                            Reaktansi: XL = ωL, XC = 1/(ωC)
+                            Impedansi RLC seri: Z = √(R²+(XL−XC)²)
+                            Sudut fase: φ = arctan((XL−XC)/R)
+
+                            Resonansi: XL=XC → f = 1/(2π√(LC))
+                            Daya: P = Vef·Ief·cos φ
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FASE 8 ===== -->
+            <div class="chapter" id="fase-8">
+                <div class="chapter-header">
+                    <div class="chapter-icon">🔮</div>
+                    <div class="chapter-title">
+                        <h2>Fase 8: Fisika Modern</h2>
+                        <p>4 topik · Relativitas, kuantum, atom, inti</p>
+                    </div>
+                </div>
+
+                <!-- F8T1 -->
+                <div class="topic" id="f8t1">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">25</div>
+                        <h3>Teori Relativitas Khusus</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box purple">
+                            Dilatasi Waktu: Δt = Δt₀/√(1−v²/c²)
+                            Kontraksi Panjang: L = L₀√(1−v²/c²)
+                            Massa Relativistik: m = m₀/√(1−v²/c²)
+
+                            Kesetaraan Massa-Energi: E₀ = m₀c²
+                            Energi total: E = mc²
+                            Energi kinetik relativistik: EK = E − E₀
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F8T2 -->
+                <div class="topic" id="f8t2">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">26</div>
+                        <h3>Gejala Kuantum</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box green">
+                            Radiasi Benda Hitam: E = n·h·f (h=6,63×10⁻³⁴ J·s)
+                            Hukum Wien: λm·T = 2,898×10⁻³ m·K
+
+                            Efek Fotolistrik: EK_maks = hf − W₀
+                            Frekuensi ambang: f₀ = W₀/h
+
+                            Efek Compton: Δλ = (h/(m₀c))(1−cos θ)
+                            Gelombang de Broglie: λ = h/p = h/(mv)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F8T3 -->
+                <div class="topic" id="f8t3">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">27</div>
+                        <h3>Fisika Atom</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box red">
+                            Model Atom Bohr (Hidrogen):
+                            rn = n²·a₀ (a₀=0,529 Å)
+                            En = −13,6/n² eV
+
+                            Deret spektrum: Lyman (UV), Balmer (tampak), Paschen (IR)
+                            Bilangan kuantum: n, l, ml, s
+                            Prinsip Pauli: tiap elektron punya 4 bilangan kuantum unik
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F8T4 -->
+                <div class="topic" id="f8t4">
+                    <div class="topic-header" onclick="toggleTopic(this)">
+                        <div class="topic-num">28</div>
+                        <h3>Inti Atom & Radioaktivitas</h3>
+                        <span class="topic-toggle">▾</span>
+                    </div>
+                    <div class="topic-body">
+                        <div class="formula-box orange">
+                            Defek massa: Δm = (Z·mp+N·mn) − m_inti
+                            Energi ikat: E = Δm·c² (1 sma = 931,5 MeV)
+
+                            Peluruhan: N = N₀·e^(−λt)
+                            Waktu paruh: T½ = ln 2/λ
+                            Aktivitas: A = λ·N
+
+                            Jenis peluruhan: Alfa (α), Beta (β⁻, β⁺), Gamma (γ)
+                            Reaksi nuklir: Fisi (pembelahan), Fusi (penggabungan)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div style="text-align:center;padding:40px 0;color:var(--text3);font-size:13px;">
+                <div style="font-size:28px;margin-bottom:12px;">⚛️</div>
+                <p><strong style="color:var(--text2)">Fisika SMP–SMA Lengkap</strong></p>
+                <p>8 Fase · 28 Topik · Rumus & Konsep Fundamental</p>
+                <p style="margin-top:16px;font-size:12px;">Fisika adalah bahasa alam semesta — teruslah bereksplorasi!</p>
+            </div>
+
+        </div><!-- .content -->
+    </div><!-- #main -->
+
+    <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script>
+        function toggleTopic(header) {
+            const topic = header.parentElement;
+            topic.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.topic').forEach((t, i) => {
+                if (i < 3) t.classList.add('open');
+            });
+        });
+
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('show');
+        }
+        document.getElementById('overlay').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('overlay').classList.remove('show');
+        });
+
+        const progressBar = document.getElementById('progress-bar');
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+            progressBar.style.width = pct + '%';
+            scrollBtn.classList.toggle('show', h.scrollTop > 400);
+        });
+
+        const sections = document.querySelectorAll('.topic, .chapter');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    const link = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+                    if (link) link.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
