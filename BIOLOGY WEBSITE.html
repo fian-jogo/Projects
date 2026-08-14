@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi Biologi SMP–SMA Lengkap · Fundamental ke Advanced</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0a1a1a;
+    --bg2: #0d2626;
+    --bg3: #113636;
+    --surface: #1a4040;
+    --surface2: #225555;
+    --border: #2e6b6b;
+    --accent: #2dd4bf;
+    --accent2: #0d9488;
+    --accent3: #22c55e;
+    --accent4: #10b981;
+    --accent5: #f43f5e;
+    --text: #d1f2eb;
+    --text2: #80cbc4;
+    --text3: #4db6ac;
+    --yellow: #fbbf24;
+    --card-a: #1a3333;
+    --card-b: #1a2e2e;
+    --card-c: #1d2e2e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 280px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-track { background: transparent; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .sidebar-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+    background: var(--bg2);
+    z-index: 1;
+  }
+  .sidebar-header h1 {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.3;
+  }
+  .sidebar-header p {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  .nav-section {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-section-label {
+    padding: 10px 20px 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 20px;
+    font-size: 13px;
+    color: var(--text2);
+    text-decoration: none;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+  }
+  .nav-link:hover {
+    color: var(--text);
+    background: var(--bg3);
+    border-left-color: var(--accent);
+  }
+  .nav-link.active {
+    color: var(--accent);
+    background: rgba(45,212,191,0.08);
+    border-left-color: var(--accent);
+  }
+  .nav-link .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--text3);
+  }
+  .nav-link:hover .dot, .nav-link.active .dot { background: var(--accent); }
+
+  #main { margin-left: 280px; min-height: 100vh; }
+  .top-bar {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px; height: 56px;
+    display: flex; align-items: center; gap: 16px;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .hamburger {
+    display: none; background: none; border: none;
+    cursor: pointer; color: var(--text2); font-size: 20px;
+  }
+  .breadcrumb { font-size: 13px; color: var(--text3); }
+  .breadcrumb span { color: var(--text2); }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 40px 40px 80px; }
+
+  .hero {
+    text-align: center; padding: 60px 20px 40px; margin-bottom: 10px;
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(45,212,191,0.12);
+    border: 1px solid rgba(45,212,191,0.3); color: var(--accent);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 4vw, 42px); font-weight: 600;
+    line-height: 1.2; margin-bottom: 16px;
+    background: linear-gradient(135deg, #d1f2eb 0%, #80cbc4 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero p { font-size: 16px; color: var(--text2); max-width: 600px; margin: 0 auto 28px; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .pill {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text2); font-size: 12px; padding: 4px 12px; border-radius: 20px;
+  }
+
+  .chapter { scroll-margin-top: 70px; margin-bottom: 60px; }
+  .chapter-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+    padding-bottom: 20px; border-bottom: 1px solid var(--border);
+  }
+  .chapter-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .chapter-icon.a { background: rgba(45,212,191,0.15); }
+  .chapter-icon.b { background: rgba(13,148,136,0.15); }
+  .chapter-icon.c { background: rgba(16,185,129,0.15); }
+  .chapter-icon.d { background: rgba(34,197,94,0.15); }
+  .chapter-icon.e { background: rgba(251,191,36,0.15); }
+  .chapter-icon.f { background: rgba(244,63,94,0.15); }
+  .chapter-icon.g { background: rgba(45,212,191,0.15); }
+  .chapter-icon.h { background: rgba(16,185,129,0.15); }
+  .chapter-icon.i { background: rgba(13,148,136,0.15); }
+  .chapter-icon.j { background: rgba(34,197,94,0.15); }
+  .chapter-title { flex: 1; }
+  .chapter-title h2 {
+    font-family: 'Lora', serif; font-size: 22px; font-weight: 600;
+    color: var(--text); margin-bottom: 4px;
+  }
+  .chapter-title p { font-size: 13px; color: var(--text3); }
+
+  .topic { scroll-margin-top: 70px; margin-bottom: 40px; background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .topic-header {
+    padding: 18px 24px; background: var(--bg3); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none;
+  }
+  .topic-num {
+    background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+    width: 26px; height: 26px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .topic-header h3 { font-size: 16px; font-weight: 600; color: var(--text); flex: 1; }
+  .topic-toggle { color: var(--text3); font-size: 18px; transition: transform 0.25s; }
+  .topic.open .topic-toggle { transform: rotate(180deg); }
+  .topic-body { display: none; padding: 24px; }
+  .topic.open .topic-body { display: block; }
+
+  .section-title {
+    font-size: 14px; font-weight: 700; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em; margin: 24px 0 10px;
+  }
+  .section-title:first-child { margin-top: 0; }
+  p { margin-bottom: 12px; color: var(--text2); }
+  p:last-child { margin-bottom: 0; }
+  p strong { color: var(--text); }
+
+  ul, ol { padding-left: 20px; color: var(--text2); margin-bottom: 12px; }
+  li { margin-bottom: 6px; }
+  li strong { color: var(--text); }
+
+  .formula-box {
+    background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 10px; padding: 16px 20px; margin: 16px 0;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--yellow); line-height: 1.8;
+  }
+  .formula-box.green { border-left-color: var(--accent4); color: #6ee7b7; }
+  .formula-box.purple { border-left-color: var(--accent2); color: #c4b5fd; }
+  .formula-box.orange { border-left-color: var(--accent3); color: #fdba74; }
+  .formula-box.red { border-left-color: var(--accent5); color: #fda4af; }
+
+  .concept-box {
+    background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.2);
+    border-radius: 10px; padding: 16px 20px; margin: 16px 0;
+  }
+  .concept-box .label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+  .concept-box.yellow { background: rgba(251,191,36,0.06); border-color: rgba(251,191,36,0.2); }
+  .concept-box.yellow .label { color: var(--yellow); }
+  .concept-box.green { background: rgba(16,185,129,0.06); border-color: rgba(16,185,129,0.2); }
+  .concept-box.green .label { color: var(--accent4); }
+  .concept-box.red { background: rgba(244,63,94,0.06); border-color: rgba(244,63,94,0.2); }
+  .concept-box.red .label { color: var(--accent5); }
+
+  .example {
+    background: var(--surface); border-radius: 12px; margin: 20px 0;
+    overflow: hidden; border: 1px solid var(--border);
+  }
+  .example-header {
+    background: var(--surface2); padding: 10px 18px; font-size: 12px;
+    font-weight: 600; color: var(--yellow); letter-spacing: 0.06em;
+    text-transform: uppercase; display: flex; align-items: center; gap: 8px;
+  }
+  .example-header::before { content: '✦'; font-size: 10px; }
+  .example-body { padding: 18px; }
+  .example-body .question { color: var(--text); font-weight: 500; margin-bottom: 14px; font-size: 15px; }
+  .example-body .step { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .step-num {
+    width: 22px; height: 22px; background: var(--accent); color: #fff;
+    border-radius: 50%; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+  }
+  .step-text { color: var(--text2); flex: 1; }
+  .step-text code {
+    font-family: 'JetBrains Mono', monospace; background: var(--bg3);
+    padding: 1px 6px; border-radius: 4px; font-size: 13px; color: var(--yellow);
+  }
+  .answer-box {
+    margin-top: 14px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 8px; padding: 12px 16px; color: #6ee7b7;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  }
+  .answer-box::before { content: '✓ Jawaban: '; font-weight: 700; font-family: 'Inter', sans-serif; }
+
+  .math-table {
+    width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px;
+  }
+  .math-table th {
+    background: var(--surface2); color: var(--text); padding: 10px 14px;
+    text-align: center; font-weight: 600; border: 1px solid var(--border);
+  }
+  .math-table td {
+    padding: 8px 14px; border: 1px solid var(--border); color: var(--text2); text-align: center;
+  }
+  .math-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+  .math-table td strong { color: var(--yellow); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .mini-card {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 14px;
+  }
+  .mini-card .title {
+    font-size: 12px; font-weight: 600; color: var(--text3); text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 8px;
+  }
+  .mini-card .val { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--yellow); }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+
+  #scrollTop {
+    position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px;
+    background: var(--accent); color: #fff; border: none; border-radius: 50%;
+    cursor: pointer; font-size: 20px; display: none; align-items: center; justify-content: center;
+    z-index: 200; box-shadow: 0 4px 16px rgba(45,212,191,0.4); transition: transform 0.2s;
+  }
+  #scrollTop:hover { transform: scale(1.1); }
+  #scrollTop.show { display: flex; }
+
+  #progress {
+    position: fixed; top: 0; left: 280px; right: 0; height: 2px;
+    background: var(--border); z-index: 101;
+  }
+  #progress-bar {
+    height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%; transition: width 0.1s;
+  }
+
+  .sub-list {
+    list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px;
+    margin: 10px 0;
+  }
+  .sub-list li {
+    display: flex; align-items: flex-start; gap: 10px; color: var(--text2);
+    font-size: 14px; margin: 0;
+  }
+  .sub-list li::before { content: '→'; color: var(--accent); font-size: 12px; margin-top: 2px; flex-shrink: 0; }
+
+  code {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--bg3);
+    padding: 1px 6px; border-radius: 4px; color: var(--yellow);
+  }
+
+  .analogy {
+    background: rgba(251,191,36,0.05); border-left: 3px solid var(--yellow);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0;
+    font-size: 14px; color: var(--text2);
+  }
+  .analogy strong { color: var(--yellow); }
+
+  @media (max-width: 768px) {
+    #sidebar { transform: translateX(-100%); }
+    #sidebar.open { transform: translateX(0); }
+    #main { margin-left: 0; }
+    #progress { left: 0; }
+    .hamburger { display: block; }
+    .content { padding: 24px 16px 60px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .top-bar { padding: 0 16px; }
+  }
+
+  #overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 99; }
+  #overlay.show { display: block; }
+</style>
+</head>
+<body>
+
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h1>🧬 Biologi SMP–SMA</h1>
+    <p>Fundamental → Advanced</p>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">A. Pondasi Biologi</div>
+    <a href="#a1" class="nav-link"><span class="dot"></span>Hakikat Biologi & Metode Ilmiah</a>
+    <a href="#a2" class="nav-link"><span class="dot"></span>Ciri-Ciri Makhluk Hidup</a>
+    <a href="#a3" class="nav-link"><span class="dot"></span>Keanekaragaman & Klasifikasi</a>
+    <a href="#a4" class="nav-link"><span class="dot"></span>Organisasi Kehidupan</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">B. Sel & Jaringan</div>
+    <a href="#b1" class="nav-link"><span class="dot"></span>Sel: Unit Kehidupan</a>
+    <a href="#b2" class="nav-link"><span class="dot"></span>Jaringan Hewan & Tumbuhan</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">C. Sistem Organ Manusia</div>
+    <a href="#c1" class="nav-link"><span class="dot"></span>Sistem Gerak</a>
+    <a href="#c2" class="nav-link"><span class="dot"></span>Sistem Pencernaan</a>
+    <a href="#c3" class="nav-link"><span class="dot"></span>Sistem Pernapasan</a>
+    <a href="#c4" class="nav-link"><span class="dot"></span>Sistem Peredaran Darah</a>
+    <a href="#c5" class="nav-link"><span class="dot"></span>Sistem Ekskresi</a>
+    <a href="#c6" class="nav-link"><span class="dot"></span>Sistem Reproduksi</a>
+    <a href="#c7" class="nav-link"><span class="dot"></span>Sistem Koordinasi</a>
+    <a href="#c8" class="nav-link"><span class="dot"></span>Sistem Imunitas</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">D. Ekologi</div>
+    <a href="#d1" class="nav-link"><span class="dot"></span>Ekologi Dasar</a>
+    <a href="#d2" class="nav-link"><span class="dot"></span>Pencemaran & Pelestarian</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">E. Genetika & Biotek Dasar</div>
+    <a href="#e1" class="nav-link"><span class="dot"></span>Pewarisan Sifat (Mendel)</a>
+    <a href="#e2" class="nav-link"><span class="dot"></span>Bioteknologi Konvensional</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">F. Mikrobiologi</div>
+    <a href="#f1" class="nav-link"><span class="dot"></span>Virus, Bakteri, Protista, Fungi</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">G. Sel & Molekuler Lanjut</div>
+    <a href="#g1" class="nav-link"><span class="dot"></span>Sel Mendalam</a>
+    <a href="#g2" class="nav-link"><span class="dot"></span>Metabolisme</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">H. Genetika Molekuler & Biotek Modern</div>
+    <a href="#h1" class="nav-link"><span class="dot"></span>Substansi Genetik & Sintesis Protein</a>
+    <a href="#h2" class="nav-link"><span class="dot"></span>Mutasi</a>
+    <a href="#h3" class="nav-link"><span class="dot"></span>Pembelahan Sel</a>
+    <a href="#h4" class="nav-link"><span class="dot"></span>Hereditas Lanjut</a>
+    <a href="#h5" class="nav-link"><span class="dot"></span>Bioteknologi Modern</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">I. Evolusi</div>
+    <a href="#i1" class="nav-link"><span class="dot"></span>Teori & Mekanisme Evolusi</a>
+    <a href="#i2" class="nav-link"><span class="dot"></span>Asal-Usul Kehidupan</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-label">J. Fisiologi Tumbuhan</div>
+    <a href="#j1" class="nav-link"><span class="dot"></span>Jaringan & Organ Tumbuhan</a>
+    <a href="#j2" class="nav-link"><span class="dot"></span>Pertumbuhan & Perkembangan</a>
+  </div>
+</nav>
+
+<div id="overlay"></div>
+<div id="progress"><div id="progress-bar"></div></div>
+
+<div id="main">
+  <div class="top-bar">
+    <button class="hamburger" id="menuBtn" onclick="toggleMenu()">☰</button>
+    <div class="breadcrumb">Biologi SMP–SMA &rsaquo; <span>Materi Lengkap</span></div>
+  </div>
+
+  <div class="content">
+    <div class="hero">
+      <div class="hero-badge">🧬 Kurikulum Komprehensif</div>
+      <h1>Biologi SMP–SMA<br>Fundamental → Advanced</h1>
+      <p>Dari hakikat biologi hingga evolusi dan bioteknologi modern — disusun bertahap agar kokoh dipahami. Dilengkapi contoh soal dan analogi.</p>
+      <div class="hero-pills">
+        <span class="pill">10 Bab Utama</span>
+        <span class="pill">30 Topik</span>
+        <span class="pill">Contoh & Studi Kasus</span>
+        <span class="pill">Konsep Visual</span>
+      </div>
+    </div>
+
+    <!-- BAB A: PONDASI -->
+    <div class="chapter" id="bab-a">
+      <div class="chapter-header"><div class="chapter-icon a">🔬</div><div class="chapter-title"><h2>A. Pondasi Biologi</h2><p>4 topik · Dasar ilmu kehidupan</p></div></div>
+
+      <div class="topic" id="a1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">1</div><h3>Hakikat Biologi & Metode Ilmiah</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p><strong>Biologi</strong> adalah ilmu tentang makhluk hidup. Cabang-cabangnya: Zoologi, Botani, Genetika, Ekologi, dll.</p><div class="formula-box green">Metode Ilmiah: Observasi → Rumusan Masalah → Hipotesis → Eksperimen (variabel bebas/terikat/kontrol) → Analisis → Kesimpulan.</div><div class="example"><div class="example-header">Contoh Soal 1</div><div class="example-body"><div class="question">Seorang siswa menanam kacang hijau di tempat gelap dan terang. Tentukan variabel bebas dan terikatnya.</div><div class="step"><span class="step-num">1</span><span class="step-text">Variabel bebas: <strong>intensitas cahaya</strong> (gelap vs terang).</span></div><div class="step"><span class="step-num">2</span><span class="step-text">Variabel terikat: <strong>pertumbuhan tinggi tanaman</strong>.</span></div><div class="answer-box">Variabel bebas = cahaya; variabel terikat = tinggi tanaman.</div></div></div></div></div>
+
+      <div class="topic" id="a2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">2</div><h3>Ciri-Ciri Makhluk Hidup</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><ul class="sub-list"><li><strong>Bernapas</strong> (aerob/anaerob)</li><li><strong>Memerlukan nutrisi</strong> (autotrof/heterotrof)</li><li><strong>Bergerak</strong> (aktif/pasif)</li><li><strong>Tumbuh & berkembang</strong></li><li><strong>Berkembang biak</strong> (generatif/vegetatif)</li><li><strong>Peka rangsang (iritabilitas)</strong></li><li><strong>Ekskresi</strong> & <strong>homeostasis</strong></li></ul><div class="concept-box yellow"><div class="label">Ingat</div>Virus tidak memiliki semua ciri ini; mereka diperdebatkan sebagai makhluk hidup.</div></div></div>
+
+      <div class="topic" id="a3"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">3</div><h3>Keanekaragaman Hayati & Klasifikasi Dasar</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><div class="grid-2"><div class="mini-card"><div class="title">Tingkat Keanekaragaman</div><div class="val">Gen, Jenis, Ekosistem</div></div><div class="mini-card"><div class="title">5 Kingdom (Whittaker)</div><div class="val">Monera, Protista, Fungi, Plantae, Animalia</div></div></div><div class="formula-box">Tata nama binomial: <i>Genus spesies</i> (miring). Contoh: <i>Oryza sativa</i> (padi).</div></div></div>
+
+      <div class="topic" id="a4"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">4</div><h3>Organisasi Kehidupan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Hierarki: <strong>Sel → Jaringan → Organ → Sistem Organ → Organisme → Populasi → Komunitas → Ekosistem → Bioma → Biosfer</strong></p><div class="analogy"><strong>Analogi:</strong> Seperti membangun rumah: sel = bata, jaringan = dinding, organ = ruangan, sistem organ = instalasi listrik/air, organisme = rumah utuh.</div></div></div>
+    </div>
+
+    <!-- BAB B -->
+    <div class="chapter" id="bab-b"><div class="chapter-header"><div class="chapter-icon b">🦠</div><div class="chapter-title"><h2>B. Unit Terkecil Kehidupan</h2><p>2 topik · Sel & jaringan</p></div></div>
+      <div class="topic" id="b1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">5</div><h3>Sel Sebagai Unit Kehidupan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><div class="grid-2"><div class="concept-box"><div class="label">Prokariotik</div>Tidak bermembran inti, contoh bakteri.</div><div class="concept-box green"><div class="label">Eukariotik</div>Memiliki membran inti, contoh sel hewan & tumbuhan.</div></div><p><strong>Organel dasar:</strong> membran sel, inti, mitokondria, ribosom, RE, Golgi.</p><div class="example"><div class="example-header">Contoh Soal 2</div><div class="example-body"><div class="question">Sebutkan tiga perbedaan sel hewan dan tumbuhan.</div><div class="step"><span class="step-num">1</span><span class="step-text">Dinding sel: ada pada tumbuhan (selulosa).</span></div><div class="step"><span class="step-num">2</span><span class="step-text">Kloroplas: hanya tumbuhan.</span></div><div class="step"><span class="step-num">3</span><span class="step-text">Sentriol: hanya hewan.</span></div><div class="answer-box">Dinding sel & kloroplas (tumbuhan), sentriol (hewan).</div></div></div></div></div>
+
+      <div class="topic" id="b2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">6</div><h3>Jaringan Hewan & Tumbuhan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><div class="grid-2"><div class="mini-card"><div class="title">Hewan</div><div class="val">Epitel, Ikat, Otot, Saraf</div></div><div class="mini-card"><div class="title">Tumbuhan</div><div class="val">Meristem, Epidermis, Parenkim, Xilem, Floem</div></div></div><p><strong>Xilem</strong> mengangkut air & mineral; <strong>Floem</strong> mengangkut hasil fotosintesis.</p></div></div>
+    </div>
+
+    <!-- BAB C: SISTEM ORGAN -->
+    <div class="chapter" id="bab-c"><div class="chapter-header"><div class="chapter-icon c">❤️</div><div class="chapter-title"><h2>C. Sistem Organ Manusia</h2><p>8 topik · Fisiologi dasar</p></div></div>
+      <div class="topic" id="c1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">7</div><h3>Sistem Gerak</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p><strong>Rangka:</strong> aksial (tengkorak, belakang, dada) & apendikular (anggota gerak). <strong>Sendi:</strong> engsel, peluru, putar, dll. <strong>Otot:</strong> polos, lurik, jantung. Kontraksi otot melibatkan aktin & miosin.</p><div class="concept-box yellow"><div class="label">Gangguan</div>Osteoporosis, skoliosis, artritis.</div></div></div>
+
+      <div class="topic" id="c2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">8</div><h3>Sistem Pencernaan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Organ: mulut (amilase), lambung (HCl, pepsin), usus halus (enzim pankreas, empedu), usus besar. Pencernaan mekanis & kimiawi.</p><div class="example"><div class="example-header">Contoh Soal 3</div><div class="example-body"><div class="question">Apa fungsi empedu dalam pencernaan?</div><div class="step"><span class="step-num">1</span><span class="step-text">Empedu dihasilkan hati, disimpan di kantong empedu.</span></div><div class="step"><span class="step-num">2</span><span class="step-text">Mengemulsi lemak (memecah menjadi butiran kecil) agar mudah dicerna lipase.</span></div><div class="answer-box">Empedu mengemulsi lemak.</div></div></div></div></div>
+
+      <div class="topic" id="c3"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">9</div><h3>Sistem Pernapasan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Alveolus → pertukaran O₂ & CO₂ secara difusi. Pernapasan dada (otot antar tulang rusuk) & perut (diafragma).</p><div class="formula-box green">Volume paru: Tidal + Cadangan Inspirasi + Cadangan Ekspirasi + Residu. Kapasitas vital = tidal + cadangan inspirasi + cadangan ekspirasi.</div></div></div>
+
+      <div class="topic" id="c4"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">10</div><h3>Sistem Peredaran Darah</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Darah: eritrosit (Hb), leukosit (imun), trombosit. Jantung 4 ruang. Peredaran kecil (jantung–paru) & besar (jantung–seluruh tubuh).</p><div class="example"><div class="example-header">Contoh Soal 4</div><div class="example-body"><div class="question">Mengapa golongan darah O disebut donor universal?</div><div class="step"><span class="step-num">1</span><span class="step-text">Eritrosit O tidak memiliki aglutinogen A/B.</span></div><div class="step"><span class="step-num">2</span><span class="step-text">Sehingga tidak digumpalkan oleh aglutinin penerima.</span></div><div class="answer-box">Karena tidak memiliki antigen A/B di permukaan sel darah merah.</div></div></div></div></div>
+
+      <div class="topic" id="c5"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">11</div><h3>Sistem Ekskresi</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Ginjal (nefron: filtrasi → reabsorpsi → augmentasi), kulit (keringat), paru (CO₂), hati (empedu).</p></div></div>
+
+      <div class="topic" id="c6"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">12</div><h3>Sistem Reproduksi</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Spermatogenesis (testis) dan oogenesis (ovarium). Siklus menstruasi, fertilisasi, kehamilan.</p></div></div>
+
+      <div class="topic" id="c7"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">13</div><h3>Sistem Koordinasi</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p><strong>Saraf:</strong> neuron, sinapsis, gerak sadar/refleks. <strong>Hormon:</strong> hipofisis, tiroid, insulin, adrenalin. Perbedaan: saraf cepat, singkat; hormon lambat, tahan lama.</p></div></div>
+
+      <div class="topic" id="c8"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">14</div><h3>Sistem Imunitas</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Nonspesifik: kulit, fagosit. Spesifik: limfosit B (antibodi) & T (seluler). Vaksin → imunitas aktif buatan.</p></div></div>
+    </div>
+
+    <!-- BAB D: EKOLOGI -->
+    <div class="chapter" id="bab-d"><div class="chapter-header"><div class="chapter-icon d">🌍</div><div class="chapter-title"><h2>D. Ekologi</h2><p>2 topik · Interaksi makhluk hidup & lingkungan</p></div></div>
+      <div class="topic" id="d1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">15</div><h3>Ekologi Dasar</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Komponen biotik & abiotik. Rantai makanan, jaring makanan, piramida energi. Siklus biogeokimia: air, karbon, nitrogen.</p><div class="analogy"><strong>Analogi:</strong> Aliran energi seperti uang yang mengalir dari produsen ke konsumen, tetapi setiap transaksi "dipotong" panas (tidak kembali).</div></div></div>
+      <div class="topic" id="d2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">16</div><h3>Pencemaran & Pelestarian</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Pencemaran air, udara, tanah. Efek rumah kaca, hujan asam. Konservasi in situ & ex situ. 4R: Reduce, Reuse, Recycle, Replace.</p></div></div>
+    </div>
+
+    <!-- BAB E: GENETIKA DASAR -->
+    <div class="chapter" id="bab-e"><div class="chapter-header"><div class="chapter-icon e">🧬</div><div class="chapter-title"><h2>E. Genetika & Bioteknologi Dasar</h2><p>2 topik</p></div></div>
+      <div class="topic" id="e1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">17</div><h3>Pewarisan Sifat (Mendel)</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Hukum Mendel I (segregasi) → monohibrid 3:1. Hukum II (pengelompokan bebas) → dihibrid 9:3:3:1. Genotip, fenotip, dominan, resesif.</p><div class="example"><div class="example-header">Contoh Soal 5</div><div class="example-body"><div class="question">Persilangan Bb (biji bulat) × Bb. Berapa persen keturunan biji keriput?</div><div class="step"><span class="step-num">1</span><span class="step-text">B = bulat dominan, b = keriput resesif.</span></div><div class="step"><span class="step-num">2</span><span class="step-text">Papan catur: BB, Bb, Bb, bb → 1 bb dari 4.</span></div><div class="answer-box">25% biji keriput.</div></div></div></div></div>
+
+      <div class="topic" id="e2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">18</div><h3>Bioteknologi Konvensional</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Fermentasi: tempe (<i>Rhizopus</i>), tape (<i>Saccharomyces</i>), yoghurt (<i>Lactobacillus</i>). Kultur jaringan tumbuhan.</p></div></div>
+    </div>
+
+    <!-- BAB F: MIKROBIOLOGI -->
+    <div class="chapter" id="bab-f"><div class="chapter-header"><div class="chapter-icon f">🦠</div><div class="chapter-title"><h2>F. Mikrobiologi</h2><p>1 topik detail</p></div></div>
+      <div class="topic" id="f1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">19</div><h3>Virus, Bakteri, Protista, Fungi</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p><strong>Virus:</strong> daur litik & lisogenik. <strong>Bakteri:</strong> kokus, basil, spirilum; reproduksi biner. <strong>Protista:</strong> mirip hewan/tumbuhan/jamur. <strong>Fungi:</strong> Zygomycota, Ascomycota, Basidiomycota.</p><div class="concept-box red"><div class="label">Penting</div>Antibiotik hanya melawan bakteri, bukan virus.</div></div></div>
+    </div>
+
+    <!-- BAB G: SEL & MOLEKULER LANJUT -->
+    <div class="chapter" id="bab-g"><div class="chapter-header"><div class="chapter-icon g">⚡</div><div class="chapter-title"><h2>G. Sel & Molekuler Lanjut</h2><p>2 topik</p></div></div>
+      <div class="topic" id="g1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">20</div><h3>Struktur & Fungsi Sel Mendalam</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Membran: mozaik fluida, transpor pasif/aktif, osmosis. Organel detail: mitokondria (respirasi), kloroplas (fotosintesis), lisosom, peroksisom.</p></div></div>
+
+      <div class="topic" id="g2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">21</div><h3>Metabolisme</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p><strong>Enzim:</strong> lock and key, faktor suhu/pH. <strong>Respirasi:</strong> glikolisis → siklus Krebs → transpor elektron (total ~36 ATP). <strong>Fotosintesis:</strong> reaksi terang (tilakoid) + siklus Calvin (stroma).</p></div></div>
+    </div>
+
+    <!-- BAB H: GENETIKA MOLEKULER -->
+    <div class="chapter" id="bab-h"><div class="chapter-header"><div class="chapter-icon h">🧪</div><div class="chapter-title"><h2>H. Genetika Molekuler & Bioteknologi Modern</h2><p>5 topik</p></div></div>
+      <div class="topic" id="h1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">22</div><h3>Substansi Genetik & Sintesis Protein</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>DNA (double helix), RNA (mRNA, tRNA, rRNA). Dogma sentral: DNA → transkripsi → mRNA → translasi → protein.</p></div></div>
+      <div class="topic" id="h2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">23</div><h3>Mutasi</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Mutasi gen (substitusi, delesi, insersi) & kromosom. Mutagen fisik/kimia/biologi. Contoh: anemia sel sabit.</p></div></div>
+      <div class="topic" id="h3"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">24</div><h3>Pembelahan Sel</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p><strong>Mitosis:</strong> 2 sel diploid identik. <strong>Meiosis:</strong> 4 sel haploid (gamet), terjadi pindah silang.</p></div></div>
+      <div class="topic" id="h4"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">25</div><h3>Hereditas Lanjut</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Penyimpangan Mendel: epistasis, kriptomeri, polimeri. Pautan & pindah silang. Golongan darah ABO, rhesus. Hukum Hardy–Weinberg.</p></div></div>
+      <div class="topic" id="h5"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">26</div><h3>Bioteknologi Modern</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>DNA rekombinan, enzim restriksi, PCR, elektroforesis, kloning, organisme transgenik (jagung Bt), terapi gen.</p></div></div>
+    </div>
+
+    <!-- BAB I: EVOLUSI -->
+    <div class="chapter" id="bab-i"><div class="chapter-header"><div class="chapter-icon i">🦎</div><div class="chapter-title"><h2>I. Evolusi</h2><p>2 topik</p></div></div>
+      <div class="topic" id="i1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">27</div><h3>Teori & Mekanisme Evolusi</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Darwin: seleksi alam. Bukti: fosil, homologi, DNA. Mekanisme: mutasi, genetic drift, aliran gen. Spesiasi alopatrik & simpatrik.</p></div></div>
+      <div class="topic" id="i2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">28</div><h3>Asal-Usul Kehidupan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Teori abiogenesis (Pasteur membantah). Evolusi kimia (Oparin-Haldane, Miller-Urey). Teori endosimbiosis (mitokondria & kloroplas).</p></div></div>
+    </div>
+
+    <!-- BAB J: FISIOLOGI TUMBUHAN -->
+    <div class="chapter" id="bab-j"><div class="chapter-header"><div class="chapter-icon j">🌿</div><div class="chapter-title"><h2>J. Fisiologi Tumbuhan</h2><p>2 topik</p></div></div>
+      <div class="topic" id="j1"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">29</div><h3>Jaringan & Organ Tumbuhan Detail</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Akar, batang, daun, bunga, buah. Pengangkutan: xilem (kohesi-tensi) & floem (source to sink).</p></div></div>
+      <div class="topic" id="j2"><div class="topic-header" onclick="toggleTopic(this)"><div class="topic-num">30</div><h3>Pertumbuhan & Perkembangan</h3><span class="topic-toggle">▾</span></div><div class="topic-body"><p>Hormon: auksin, giberelin, sitokinin, asam absisat, etilen. Faktor eksternal: cahaya, suhu. Metagenesis lumut & paku.</p></div></div>
+    </div>
+
+    <div style="text-align:center;padding:40px 0;color:var(--text3);font-size:13px;">
+      <div style="font-size:28px;margin-bottom:12px;">🧬</div>
+      <p><strong style="color:var(--text2)">Biologi SMP–SMA Lengkap</strong></p>
+      <p>10 Bab · 30 Topik · Contoh & Konsep</p>
+      <p style="margin-top:16px;font-size:12px;">Pahami kehidupan dari molekul hingga ekosistem!</p>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  function toggleTopic(header) { header.parentElement.classList.toggle('open'); }
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.topic').forEach((t,i) => { if (i<3) t.classList.add('open'); });
+  });
+  function toggleMenu() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('show');
+  }
+  document.getElementById('overlay').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+  });
+  const progressBar = document.getElementById('progress-bar');
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progressBar.style.width = pct + '%';
+    scrollBtn.classList.toggle('show', h.scrollTop > 400);
+  });
+  const sections = document.querySelectorAll('.topic, .chapter');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
