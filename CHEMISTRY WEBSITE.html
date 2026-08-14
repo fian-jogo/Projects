@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi Kimia SMP–SMA Lengkap</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+
+:root {
+  --bg: #12091a;
+  --bg2: #1a0e26;
+  --bg3: #241335;
+  --surface: #2e1a42;
+  --surface2: #3a2252;
+  --border: #542e6e;
+  --accent: #e879f9;
+  --accent2: #d946ef;
+  --accent3: #22d3ee;
+  --accent4: #facc15;
+  --accent5: #fb7185;
+  --text: #f5f3ff;
+  --text2: #c4b5fd;
+  --text3: #8b7aa8;
+  --yellow: #fef08a;
+}
+
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+  #sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  #sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #sidebar::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg2);
+    z-index: 1;
+  }
+  .sidebar-header h1 {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.3;
+  }
+  .sidebar-header p {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  .nav-section {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-section-label {
+    padding: 10px 20px 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 20px;
+    font-size: 13px;
+    color: var(--text2);
+    text-decoration: none;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+  }
+  .nav-link:hover {
+    color: var(--text);
+    background: var(--bg3);
+    border-left-color: var(--accent);
+  }
+  .nav-link.active {
+    color: var(--accent);
+    background: rgba(45, 212, 168, 0.08);
+    border-left-color: var(--accent);
+  }
+  .nav-link .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--text3);
+  }
+  .nav-link:hover .dot,
+  .nav-link.active .dot {
+    background: var(--accent);
+  }
+
+  /* MAIN */
+  #main {
+    margin-left: 280px;
+    min-height: 100vh;
+  }
+
+  .top-bar {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text2);
+    font-size: 20px;
+  }
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--text3);
+  }
+  .breadcrumb span {
+    color: var(--text2);
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 40px 80px;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    margin-bottom: 10px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(45, 212, 168, 0.12);
+    border: 1px solid rgba(45, 212, 168, 0.3);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #e2f0e8 0%, #94a89e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 16px;
+    color: var(--text2);
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* CHAPTER HEADING */
+  .chapter {
+    scroll-margin-top: 70px;
+    margin-bottom: 60px;
+  }
+  .chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .chapter-icon.a {
+    background: rgba(45, 212, 168, 0.15);
+  }
+  .chapter-icon.b {
+    background: rgba(20, 184, 166, 0.15);
+  }
+  .chapter-icon.c {
+    background: rgba(14, 165, 233, 0.15);
+  }
+  .chapter-icon.d {
+    background: rgba(245, 158, 11, 0.15);
+  }
+  .chapter-icon.e {
+    background: rgba(239, 68, 68, 0.15);
+  }
+  .chapter-icon.f {
+    background: rgba(45, 212, 168, 0.15);
+  }
+  .chapter-icon.g {
+    background: rgba(20, 184, 166, 0.15);
+  }
+  .chapter-icon.h {
+    background: rgba(14, 165, 233, 0.15);
+  }
+  .chapter-icon.i {
+    background: rgba(245, 158, 11, 0.15);
+  }
+  .chapter-title {
+    flex: 1;
+  }
+  .chapter-title h2 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .chapter-title p {
+    font-size: 13px;
+    color: var(--text3);
+  }
+
+  /* TOPIC */
+  .topic {
+    scroll-margin-top: 70px;
+    margin-bottom: 40px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .topic-header {
+    padding: 18px 24px;
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .topic-num {
+    background: var(--accent);
+    color: #0d1a15;
+    font-size: 11px;
+    font-weight: 700;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .topic-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+  }
+  .topic-toggle {
+    color: var(--text3);
+    font-size: 18px;
+    transition: transform 0.25s;
+  }
+  .topic.open .topic-toggle {
+    transform: rotate(180deg);
+  }
+  .topic-body {
+    display: none;
+    padding: 24px;
+  }
+  .topic.open .topic-body {
+    display: block;
+  }
+
+  /* CONTENT STYLES */
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 24px 0 10px;
+  }
+  .section-title:first-child {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 12px;
+    color: var(--text2);
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  p strong {
+    color: var(--text);
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+    color: var(--text2);
+    margin-bottom: 12px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  li strong {
+    color: var(--text);
+  }
+
+  /* FORMULA BOX */
+  .formula-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    line-height: 1.8;
+  }
+  .formula-box.green {
+    border-left-color: var(--accent2);
+    color: #5eead4;
+  }
+  .formula-box.purple {
+    border-left-color: #818cf8;
+    color: #c4b5fd;
+  }
+  .formula-box.orange {
+    border-left-color: var(--accent4);
+    color: #fdba74;
+  }
+  .formula-box.red {
+    border-left-color: var(--accent5);
+    color: #fda4af;
+  }
+
+  /* CONCEPT BOX */
+  .concept-box {
+    background: rgba(45, 212, 168, 0.06);
+    border: 1px solid rgba(45, 212, 168, 0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .concept-box .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .concept-box.yellow {
+    background: rgba(250, 204, 21, 0.06);
+    border-color: rgba(250, 204, 21, 0.2);
+  }
+  .concept-box.yellow .label {
+    color: var(--yellow);
+  }
+  .concept-box.green {
+    background: rgba(94, 234, 212, 0.06);
+    border-color: rgba(94, 234, 212, 0.2);
+  }
+  .concept-box.green .label {
+    color: #5eead4;
+  }
+  .concept-box.red {
+    background: rgba(239, 68, 68, 0.06);
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+  .concept-box.red .label {
+    color: var(--accent5);
+  }
+
+  /* EXAMPLE */
+  .example {
+    background: var(--surface);
+    border-radius: 12px;
+    margin: 20px 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .example-header {
+    background: var(--surface2);
+    padding: 10px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--yellow);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .example-header::before {
+    content: '✦';
+    font-size: 10px;
+  }
+  .example-body {
+    padding: 18px;
+  }
+  .example-body .question {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 14px;
+    font-size: 15px;
+  }
+  .example-body .step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    background: var(--accent);
+    color: #0d1a15;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-text {
+    color: var(--text2);
+    flex: 1;
+  }
+  .step-text code {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg3);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--yellow);
+  }
+  .answer-box {
+    margin-top: 14px;
+    background: rgba(45, 212, 168, 0.1);
+    border: 1px solid rgba(45, 212, 168, 0.25);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #5eead4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+  }
+  .answer-box::before {
+    content: '✓ Jawaban: ';
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* TABLE */
+  .math-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .math-table th {
+    background: var(--surface2);
+    color: var(--text);
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border);
+  }
+  .math-table td {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    text-align: center;
+  }
+  .math-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .math-table td strong {
+    color: var(--yellow);
+  }
+
+  /* GRID */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .mini-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .mini-card .title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .mini-card .val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    color: var(--accent);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  /* SCROLL TO TOP */
+  #scrollTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    background: var(--accent);
+    color: #0d1a15;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    box-shadow: 0 4px 16px rgba(45, 212, 168, 0.4);
+    transition: transform 0.2s;
+  }
+  #scrollTop:hover {
+    transform: scale(1.1);
+  }
+  #scrollTop.show {
+    display: flex;
+  }
+
+  /* PROGRESS */
+  #progress {
+    position: fixed;
+    top: 0;
+    left: 280px;
+    right: 0;
+    height: 2px;
+    background: var(--border);
+    z-index: 101;
+  }
+  #progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  /* SUB LIST */
+  .sub-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  .sub-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text2);
+    font-size: 14px;
+    margin: 0;
+  }
+  .sub-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 12px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: var(--bg3);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--yellow);
+  }
+
+  /* ANALOGY */
+  .analogy {
+    background: rgba(250, 204, 21, 0.05);
+    border-left: 3px solid var(--yellow);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--text2);
+  }
+  .analogy strong {
+    color: var(--yellow);
+  }
+
+  @media (max-width: 768px) {
+    #sidebar {
+      transform: translateX(-100%);
+    }
+    #sidebar.open {
+      transform: translateX(0);
+    }
+    #main {
+      margin-left: 0;
+    }
+    #progress {
+      left: 0;
+    }
+    .hamburger {
+      display: block;
+    }
+    .content {
+      padding: 24px 16px 60px;
+    }
+    .grid-2,
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+    .top-bar {
+      padding: 0 16px;
+    }
+  }
+
+  /* Overlay for mobile */
+  #overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+  }
+  #overlay.show {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h1>🧪 Kimia SMP–SMA</h1>
+      <p>Materi Lengkap & Terstruktur</p>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">A. Pengenalan Kimia & Wujud Materi</div>
+      <a href="#a1" class="nav-link"><span class="dot"></span>Hakikat Ilmu Kimia</a>
+      <a href="#a2" class="nav-link"><span class="dot"></span>Materi dan Sifatnya</a>
+      <a href="#a3" class="nav-link"><span class="dot"></span>Perubahan Materi</a>
+      <a href="#a4" class="nav-link"><span class="dot"></span>Pemisahan Campuran</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">B. Partikel Penyusun Materi</div>
+      <a href="#b1" class="nav-link"><span class="dot"></span>Atom, Molekul, dan Ion</a>
+      <a href="#b2" class="nav-link"><span class="dot"></span>Struktur Atom</a>
+      <a href="#b3" class="nav-link"><span class="dot"></span>Konfigurasi Elektron & Valensi</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">C. Sistem Periodik Unsur</div>
+      <a href="#c1" class="nav-link"><span class="dot"></span>Perkembangan Sistem Periodik</a>
+      <a href="#c2" class="nav-link"><span class="dot"></span>Struktur Tabel Periodik Modern</a>
+      <a href="#c3" class="nav-link"><span class="dot"></span>Sifat Periodik Unsur</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">D. Ikatan Kimia & Bentuk Molekul</div>
+      <a href="#d1" class="nav-link"><span class="dot"></span>Dasar & Ikatan Ion</a>
+      <a href="#d2" class="nav-link"><span class="dot"></span>Ikatan Kovalen & Logam</a>
+      <a href="#d3" class="nav-link"><span class="dot"></span>Kepolaran & Geometri (VSEPR)</a>
+      <a href="#d4" class="nav-link"><span class="dot"></span>Gaya Antarmolekul</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">E. Tata Nama & Persamaan Reaksi</div>
+      <a href="#e1" class="nav-link"><span class="dot"></span>Tata Nama Senyawa</a>
+      <a href="#e2" class="nav-link"><span class="dot"></span>Persamaan Reaksi Kimia</a>
+      <a href="#e3" class="nav-link"><span class="dot"></span>Jenis Reaksi Dasar</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">F. Stoikiometri</div>
+      <a href="#f1" class="nav-link"><span class="dot"></span>Ar, Mr & Konsep Mol</a>
+      <a href="#f2" class="nav-link"><span class="dot"></span>Perhitungan Kimia & Pembatas</a>
+      <a href="#f3" class="nav-link"><span class="dot"></span>Stoikiometri Larutan</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">G. Larutan & Reaksi dalam Larutan</div>
+      <a href="#g1" class="nav-link"><span class="dot"></span>Elektrolit & Nonelektrolit</a>
+      <a href="#g2" class="nav-link"><span class="dot"></span>Asam-Basa & pH</a>
+      <a href="#g3" class="nav-link"><span class="dot"></span>Bronsted-Lowry & Lewis</a>
+      <a href="#g4" class="nav-link"><span class="dot"></span>Reaksi Pengendapan</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">H. Termokimia</div>
+      <a href="#h1" class="nav-link"><span class="dot"></span>Sistem, Entalpi & Jenis Reaksi</a>
+      <a href="#h2" class="nav-link"><span class="dot"></span>Hukum Hess & Perhitungan ΔH</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">I. Kinetika Kimia</div>
+      <a href="#i1" class="nav-link"><span class="dot"></span>Laju Reaksi & Orde</a>
+      <a href="#i2" class="nav-link"><span class="dot"></span>Faktor Laju & Teori Tumbukan</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">J. Kesetimbangan Kimia</div>
+      <a href="#j1" class="nav-link"><span class="dot"></span>Kesetimbangan & Kc/Kp</a>
+      <a href="#j2" class="nav-link"><span class="dot"></span>Le Chatelier & Ion dalam Larutan</a>
+      <a href="#j3" class="nav-link"><span class="dot"></span>Kelarutan & Ksp</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">K. Redoks & Elektrokimia</div>
+      <a href="#k1" class="nav-link"><span class="dot"></span>Penyetaraan Redoks</a>
+      <a href="#k2" class="nav-link"><span class="dot"></span>Sel Volta & Potensial Sel</a>
+      <a href="#k3" class="nav-link"><span class="dot"></span>Sel Elektrolisis & Faraday</a>
+      <a href="#k4" class="nav-link"><span class="dot"></span>Korosi & Pencegahannya</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">L. Kimia Unsur</div>
+      <a href="#l1" class="nav-link"><span class="dot"></span>Golongan Utama & Periode 3</a>
+      <a href="#l2" class="nav-link"><span class="dot"></span>Unsur Transisi & Dampak</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">M. Kimia Organik</div>
+      <a href="#m1" class="nav-link"><span class="dot"></span>Hidrokarbon & Gugus Fungsi</a>
+      <a href="#m2" class="nav-link"><span class="dot"></span>Isomer & Makromolekul</a>
+    </div>
+  </nav>
+
+  <div id="overlay"></div>
+  <div id="progress"><div id="progress-bar"></div></div>
+
+  <!-- Main -->
+  <div id="main">
+    <div class="top-bar">
+      <button class="hamburger" id="menuBtn" onclick="toggleMenu()">☰</button>
+      <div class="breadcrumb">Kimia SMP–SMA &rsaquo; <span>Materi Lengkap</span></div>
+    </div>
+
+    <div class="content">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-badge">⚗️ Materi Komprehensif</div>
+        <h1>Kimia SMP–SMA<br>Lengkap & Sistematis</h1>
+        <p>Dari wujud materi di sekitar kita hingga reaksi redoks dan kimia organik — disajikan bertahap dengan konsep mendalam, rumus kunci, dan contoh soal.</p>
+        <div class="hero-pills">
+          <span class="pill">13 Bab Utama</span>
+          <span class="pill">50+ Topik</span>
+          <span class="pill">Rumus & Konsep</span>
+          <span class="pill">Contoh Soal</span>
+          <span class="pill">Urutan Logis</span>
+        </div>
+      </div>
+
+      <!-- ===== BAB A ===== -->
+      <div class="chapter" id="bab-a">
+        <div class="chapter-header">
+          <div class="chapter-icon a">🧪</div>
+          <div class="chapter-title">
+            <h2>A. Pengenalan Kimia dan Wujud Materi</h2>
+            <p>4 topik · Fondasi paling awal sebelum menyentuh atom</p>
+          </div>
+        </div>
+
+        <!-- A1 -->
+        <div class="topic" id="a1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Hakikat Ilmu Kimia</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="section-title">Definisi & Ruang Lingkup</div>
+            <div class="analogy"><strong>Analogi:</strong> Kimia adalah "ilmu detektif" — mengamati perubahan terkecil pada zat untuk memahami bagaimana alam bekerja.</div>
+            <ul class="sub-list">
+              <li><strong>Kimia</strong> = ilmu yang mempelajari susunan, struktur, sifat, dan perubahan materi serta energi yang menyertainya.</li>
+              <li><strong>Cabang Kimia:</strong> Anorganik, Organik, Biokimia, Fisik, Analitik, Lingkungan.</li>
+              <li><strong>Peran dalam kehidupan:</strong> makanan, obat, pakaian, bahan bakar, produk rumah tangga.</li>
+            </ul>
+            <div class="section-title">Laboratorium & Keselamatan Kerja</div>
+            <ul class="sub-list">
+              <li><strong>Alat dasar:</strong> gelas kimia, tabung reaksi, erlenmeyer, corong, spatula, cawan penguap, pembakar spiritus.</li>
+              <li><strong>Simbol bahaya:</strong> korosif, mudah terbakar, beracun, iritan, radioaktif, eksplosif.</li>
+              <li><strong>Tata tertib:</strong> gunakan jas lab, kacamata pelindung, jangan mencicipi bahan kimia.</li>
+            </ul>
+            <div class="concept-box yellow">
+              <div class="label">⚠ Metode Ilmiah</div>
+              Observasi → Hipotesis → Eksperimen → Analisis → Teori. Setiap langkah harus terdokumentasi dan dapat direproduksi.
+            </div>
+          </div>
+        </div>
+
+        <!-- A2 -->
+        <div class="topic" id="a2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Materi dan Sifatnya</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="section-title">Definisi Materi</div>
+            <p>Segala sesuatu yang memiliki <strong>massa</strong> dan <strong>menempati ruang</strong> (volume).</p>
+            <div class="grid-2">
+              <div class="mini-card"><div class="title">Sifat Fisika</div><div class="val">Wujud, titik didih, massa jenis, kelarutan, daya hantar, warna, bau.</div></div>
+              <div class="mini-card"><div class="title">Sifat Kimia</div><div class="val">Mudah terbakar, berkarat, bereaksi dengan asam, membusuk, toksisitas.</div></div>
+            </div>
+            <div class="grid-2">
+              <div class="concept-box"><div class="label">Sifat Intensif</div>Tidak bergantung jumlah materi. Contoh: titik didih air 100°C untuk 1L maupun 10L.</div>
+              <div class="concept-box green"><div class="label">Sifat Ekstensif</div>Bergantung jumlah materi. Contoh: massa, volume, energi total.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- A3 -->
+        <div class="topic" id="a3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Perubahan Materi & Klasifikasi</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="section-title">Perubahan Fisika vs Kimia</div>
+            <table class="math-table">
+              <tr><th>Jenis</th><th>Ciri</th><th>Contoh</th></tr>
+              <tr><td>Fisika</td><td>Tidak menghasilkan zat baru</td><td>Es mencair, lilin meleleh, garam larut</td></tr>
+              <tr><td>Kimia (Reaksi)</td><td>Menghasilkan zat baru</td><td>Pembakaran kayu, perkaratan besi, fotosintesis</td></tr>
+            </table>
+            <div class="section-title">Klasifikasi Materi</div>
+            <ul class="sub-list">
+              <li><strong>Zat Tunggal — Unsur:</strong> tidak dapat diuraikan. Contoh: Emas (Au), Oksigen (O₂), Besi (Fe).</li>
+              <li><strong>Zat Tunggal — Senyawa:</strong> gabungan dua atau lebih unsur melalui reaksi kimia. Contoh: Air (H₂O), Garam dapur (NaCl), Gula (C₁₂H₂₂O₁₁).</li>
+              <li><strong>Campuran Homogen (Larutan):</strong> komponen tidak dapat dibedakan, satu fase. Contoh: larutan gula, udara.</li>
+              <li><strong>Campuran Heterogen:</strong> komponen masih dapat dibedakan. Contoh: campuran pasir dan besi, salad.</li>
+              <li><strong>Koloid:</strong> antara larutan & suspensi, ukuran partikel 1–100 nm, menunjukkan efek Tyndall. Contoh: susu, kabut.</li>
+              <li><strong>Suspensi:</strong> partikel besar, mengendap, dapat disaring. Contoh: air keruh.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- A4 -->
+        <div class="topic" id="a4">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">4</div>
+            <h3>Pemisahan Campuran</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="analogy"><strong>Prinsip:</strong> Memisahkan komponen berdasarkan perbedaan sifat fisika (ukuran partikel, titik didih, kelarutan).</div>
+            <div class="grid-2">
+              <div class="mini-card"><div class="title">Filtrasi</div><div class="val">Pisahkan padatan tak larut dari cairan. Contoh: menyaring air keruh.</div></div>
+              <div class="mini-card"><div class="title">Distilasi</div><div class="val">Pisahkan cairan berdasarkan titik didih. Contoh: pemurnian air laut, minyak bumi.</div></div>
+              <div class="mini-card"><div class="title">Kristalisasi</div><div class="val">Bentuk kristal dari larutan jenuh. Contoh: pembuatan garam.</div></div>
+              <div class="mini-card"><div class="title">Kromatografi</div><div class="val">Pisahkan zat warna berdasarkan kecepatan rambat. Contoh: analisis tinta.</div></div>
+              <div class="mini-card"><div class="title">Sublimasi</div><div class="val">Pisahkan zat yang dapat menyublim. Contoh: pemurnian iodium.</div></div>
+              <div class="mini-card"><div class="title">Sentrifugasi</div><div class="val">Pisahkan berdasarkan massa jenis dengan putaran tinggi. Contoh: pemisahan plasma darah.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB B ===== -->
+      <div class="chapter" id="bab-b">
+        <div class="chapter-header">
+          <div class="chapter-icon b">⚛️</div>
+          <div class="chapter-title">
+            <h2>B. Partikel Penyusun Materi</h2>
+            <p>3 topik · Atom, molekul, ion, dan konfigurasi elektron</p>
+          </div>
+        </div>
+
+        <div class="topic" id="b1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Atom, Molekul, dan Ion</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Teori Atom Dalton:</strong>
+              1. Materi tersusun dari partikel terkecil tak terbagi (atom).
+              2. Atom unsur sejenis identik, berbeda jenis berbeda massa.
+              3. Atom bergabung dengan perbandingan bulat & sederhana membentuk senyawa.
+              4. Reaksi kimia = penataan ulang atom.
+            </div>
+            <ul class="sub-list">
+              <li><strong>Atom:</strong> partikel terkecil unsur, masih memiliki sifat unsur tersebut. Simbol: H, O, Fe, Au.</li>
+              <li><strong>Molekul Unsur:</strong> gabungan atom sejenis (H₂, O₂, N₂, P₄).</li>
+              <li><strong>Molekul Senyawa:</strong> gabungan atom berbeda (H₂O, CO₂, C₆H₁₂O₆).</li>
+              <li><strong>Kation (+):</strong> atom kehilangan elektron (Na⁺, Ca²⁺, NH₄⁺).</li>
+              <li><strong>Anion (−):</strong> atom menerima elektron (Cl⁻, O²⁻, SO₄²⁻).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic" id="b2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Struktur Atom</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box green">
+              <strong>Partikel Subatom:</strong><br>
+              Proton: di inti, muatan +1, massa ~1 sma<br>
+              Neutron: di inti, muatan 0, massa ~1 sma<br>
+              Elektron: di kulit, muatan −1, massa ~1/1836 sma<br><br>
+              <strong>Nomor Atom (Z)</strong> = jumlah proton<br>
+              <strong>Nomor Massa (A)</strong> = proton + neutron<br>
+              <strong>Notasi:</strong> ⁽ᴬ⁾_Z X &nbsp;&nbsp; Contoh: ¹²₆C
+            </div>
+            <div class="grid-3">
+              <div class="mini-card"><div class="title">Isotop</div><div class="val">Z sama, A beda<br>¹²C, ¹³C, ¹⁴C</div></div>
+              <div class="mini-card"><div class="title">Isobar</div><div class="val">A sama, Z beda<br>⁴⁰Ar & ⁴⁰Ca</div></div>
+              <div class="mini-card"><div class="title">Isoton</div><div class="val">jumlah neutron sama<br>³H & ³He (N=2)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="b3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Konfigurasi Elektron & Elektron Valensi</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box purple">
+              <strong>Aturan Kulit (Model Bohr):</strong><br>
+              Kulit K (n=1) maks 2 e⁻<br>
+              Kulit L (n=2) maks 8 e⁻<br>
+              Kulit M (n=3) maks 18 e⁻<br>
+              Kulit N (n=4) maks 32 e⁻<br>
+              Pengisian dimulai dari kulit terdalam.<br><br>
+              <strong>Elektron Valensi:</strong> elektron pada kulit terluar. Menentukan golongan & sifat kimia.
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Konfigurasi Elektron</div>
+              <div class="example-body">
+                <div class="question">Tulis konfigurasi elektron untuk Na (Z=11) dan Cl (Z=17). Tentukan elektron valensinya.</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">Na (Z=11): <code>2, 8, 1</code> → elektron valensi = <strong>1</strong></span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">Cl (Z=17): <code>2, 8, 7</code> → elektron valensi = <strong>7</strong></span></div>
+                <div class="answer-box">Na: 2,8,1 (valensi 1); Cl: 2,8,7 (valensi 7)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB C ===== -->
+      <div class="chapter" id="bab-c">
+        <div class="chapter-header">
+          <div class="chapter-icon c">📊</div>
+          <div class="chapter-title">
+            <h2>C. Sistem Periodik Unsur</h2>
+            <p>3 topik · Memetakan dan meramalkan sifat unsur</p>
+          </div>
+        </div>
+
+        <div class="topic" id="c1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Perkembangan Sistem Periodik</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <ul class="sub-list">
+              <li><strong>Triade Dobereiner:</strong> 3 unsur mirip, massa tengah ≈ rata-rata dua lainnya (Ca-Sr-Ba).</li>
+              <li><strong>Oktaf Newlands:</strong> sifat berulang tiap 8 unsur (hukum oktaf).</li>
+              <li><strong>Mendeleev:</strong> berdasarkan kenaikan massa atom, menyediakan tempat kosong, meramalkan sifat unsur yang belum ditemukan.</li>
+              <li><strong>Moseley (Modern):</strong> berdasarkan kenaikan <strong>nomor atom</strong>, sifat berulang secara periodik.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic" id="c2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Struktur Tabel Periodik Modern</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="concept-box"><div class="label">Golongan (Vertikal)</div>Gol. Utama (A): IA–VIIIA, elektron valensi = nomor golongan. Gol. Transisi (B): pengisian subkulit d.</div>
+              <div class="concept-box green"><div class="label">Periode (Horizontal)</div>7 periode. Nomor periode = jumlah kulit yang terisi elektron.</div>
+            </div>
+            <div class="formula-box">
+              <strong>Menentukan Letak Unsur:</strong><br>
+              Golongan = elektron valensi (A) atau (elektron valensi + elektron d terakhir) (B).<br>
+              Periode = jumlah kulit terisi.
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="c3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Sifat Periodik Unsur</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <table class="math-table">
+              <tr><th>Sifat</th><th>Satu Golongan (↓)</th><th>Satu Periode (→)</th></tr>
+              <tr><td>Jari-jari atom</td><td>Membesar</td><td>Mengecil</td></tr>
+              <tr><td>Energi Ionisasi</td><td>Menurun</td><td>Meningkat</td></tr>
+              <tr><td>Afinitas Elektron</td><td>Menurun (kurang negatif)</td><td>Meningkat (lebih negatif)</td></tr>
+              <tr><td>Keelektronegatifan</td><td>Menurun</td><td>Meningkat</td></tr>
+              <tr><td>Sifat Logam</td><td>Meningkat</td><td>Menurun</td></tr>
+            </table>
+            <div class="concept-box yellow">
+              <div class="label">Kereaktifan</div>
+              Logam alkali (IA): makin reaktif ke <strong>bawah</strong>. Halogen (VIIA): makin reaktif ke <strong>atas</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB D ===== -->
+      <div class="chapter" id="bab-d">
+        <div class="chapter-header">
+          <div class="chapter-icon d">🔗</div>
+          <div class="chapter-title">
+            <h2>D. Ikatan Kimia dan Bentuk Molekul</h2>
+            <p>4 topik · Bagaimana atom bergabung</p>
+          </div>
+        </div>
+
+        <div class="topic" id="d1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Dasar Ikatan Kimia & Ikatan Ion</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Aturan Oktet:</strong> atom cenderung memiliki 8 elektron valensi (seperti gas mulia).<br>
+              <strong>Lambang Lewis:</strong> simbol atom dengan dot mewakili elektron valensi.<br><br>
+              <strong>Ikatan Ion:</strong> transfer elektron dari logam ke nonlogam, terbentuk kation dan anion, terikat gaya elektrostatik.
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Pembentukan NaCl</div>
+              <div class="example-body">
+                <div class="question">Bagaimana ikatan ion terbentuk pada NaCl?</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">Na (2,8,1) melepas 1 e⁻ → <code>Na⁺</code></span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">Cl (2,8,7) menerima 1 e⁻ → <code>Cl⁻</code></span></div>
+                <div class="step"><span class="step-num">3</span><span class="step-text">Na⁺ + Cl⁻ → NaCl (ikatan ion, gaya elektrostatik)</span></div>
+                <div class="answer-box">Senyawa ion: titik leleh tinggi, larut dalam air, lelehan/larutan menghantarkan listrik.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="d2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Ikatan Kovalen & Ikatan Logam</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="concept-box">
+                <div class="label">Ikatan Kovalen</div>
+                Pemakaian bersama pasangan elektron oleh atom nonlogam.<br>
+                Tunggal: H₂, CH₄<br>
+                Rangkap dua: O₂, CO₂<br>
+                Rangkap tiga: N₂<br>
+                Koordinasi: NH₄⁺ (pasangan elektron dari N)
+              </div>
+              <div class="concept-box green">
+                <div class="label">Ikatan Logam</div>
+                "Lautan elektron" — kation logam dalam kisi, elektron valensi terdelokalisasi bergerak bebas.<br>
+                → Konduktor, mengilap, dapat ditempa & ditarik.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="d3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Kepolaran & Geometri Molekul (VSEPR)</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box purple">
+              <strong>Keelektronegatifan & Kepolaran:</strong><br>
+              ΔEN = 0 → kovalen nonpolar (Cl₂)<br>
+              ΔEN 0,5–1,7 → kovalen polar (HF, H₂O)<br>
+              ΔEN > 1,7 → ikatan ion (NaCl)<br>
+              Molekul polar: momen dipol total ≠ 0 (air, NH₃). Nonpolar: CO₂, CCl₄ (simetris).
+            </div>
+            <div class="section-title">Bentuk Molekul (Teori VSEPR)</div>
+            <table class="math-table">
+              <tr><th>PEI</th><th>PEB</th><th>Bentuk</th><th>Contoh</th><th>Sudut</th></tr>
+              <tr><td>2</td><td>0</td><td>Linear</td><td>BeCl₂, CO₂</td><td>180°</td></tr>
+              <tr><td>3</td><td>0</td><td>Trigonal Planar</td><td>BF₃</td><td>120°</td></tr>
+              <tr><td>4</td><td>0</td><td>Tetrahedral</td><td>CH₄</td><td>109,5°</td></tr>
+              <tr><td>3</td><td>1</td><td>Trigonal Piramida</td><td>NH₃</td><td>~107°</td></tr>
+              <tr><td>2</td><td>2</td><td>Bengkok (V)</td><td>H₂O</td><td>~104,5°</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="topic" id="d4">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">4</div>
+            <h3>Gaya Antarmolekul</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="mini-card"><div class="title">Gaya London (Dispersi)</div><div class="val">Terjadi pada semua molekul. Makin besar Mr, makin kuat. Contoh: F₂ cair, hidrokarbon.</div></div>
+              <div class="mini-card"><div class="title">Dipol-Dipol</div><div class="val">Antara molekul polar. Lebih kuat dari London. Contoh: HCl, aseton.</div></div>
+              <div class="mini-card"><div class="title">Ikatan Hidrogen</div><div class="val">H terikat pada F, O, N berinteraksi dengan PEB F, O, N. Sangat kuat. Contoh: H₂O, HF, DNA.</div></div>
+              <div class="mini-card"><div class="title">Pengaruh</div><div class="val">Titik didih air tinggi karena ikatan hidrogen. Polar larut polar, nonpolar larut nonpolar.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB E ===== -->
+      <div class="chapter" id="bab-e">
+        <div class="chapter-header">
+          <div class="chapter-icon e">📝</div>
+          <div class="chapter-title">
+            <h2>E. Tata Nama dan Persamaan Reaksi</h2>
+            <p>3 topik · Membaca dan menulis simbol kimia</p>
+          </div>
+        </div>
+
+        <div class="topic" id="e1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Tata Nama Senyawa</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Biner Logam–Nonlogam:</strong> "logam + nonlogam + -ida"<br>
+              FeCl₂ = besi(II) klorida; FeCl₃ = besi(III) klorida<br>
+              <strong>Biner Nonlogam–Nonlogam:</strong> awalan Yunani (di, tri, tetra...)<br>
+              CO = karbon monoksida; N₂O₄ = dinitrogen tetraoksida<br>
+              <strong>Poliatomik:</strong> Na₂SO₄ = natrium sulfat<br>
+              <strong>Asam:</strong> HCl = asam klorida; H₂SO₄ = asam sulfat<br>
+              <strong>Basa:</strong> NaOH = natrium hidroksida
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="e2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Persamaan Reaksi Kimia</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box green">
+              <strong>Reaktan → Produk</strong><br>
+              Fase: (s) solid, (l) liquid, (g) gas, (aq) aqueous<br>
+              <strong>Penyetaraan:</strong> jumlah atom setiap unsur di ruas kiri = kanan (Hukum Lavoisier).
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Penyetaraan Reaksi</div>
+              <div class="example-body">
+                <div class="question">Setarakan: C₃H₈ + O₂ → CO₂ + H₂O</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">C: 3 → beri koefisien 3 pada CO₂</span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">H: 8 → beri koefisien 4 pada H₂O</span></div>
+                <div class="step"><span class="step-num">3</span><span class="step-text">O: 3×2 + 4×1 = 10 → beri koefisien 5 pada O₂</span></div>
+                <div class="answer-box">C₃H₈ + 5O₂ → 3CO₂ + 4H₂O</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="e3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Jenis Reaksi Dasar</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <ul class="sub-list">
+              <li><strong>Sintesis:</strong> A + B → AB. Contoh: 2H₂ + O₂ → 2H₂O</li>
+              <li><strong>Penguraian:</strong> AB → A + B. Contoh: CaCO₃ → CaO + CO₂</li>
+              <li><strong>Penggantian Tunggal:</strong> A + BC → AC + B. Contoh: Zn + 2HCl → ZnCl₂ + H₂</li>
+              <li><strong>Penggantian Ganda:</strong> AB + CD → AD + CB. Contoh: AgNO₃ + NaCl → AgCl↓ + NaNO₃</li>
+              <li><strong>Pembakaran:</strong> Hidrokarbon + O₂ → CO₂ + H₂O</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB F ===== -->
+      <div class="chapter" id="bab-f">
+        <div class="chapter-header">
+          <div class="chapter-icon f">⚖️</div>
+          <div class="chapter-title">
+            <h2>F. Stoikiometri</h2>
+            <p>3 topik · Perhitungan kuantitatif dalam reaksi</p>
+          </div>
+        </div>
+
+        <div class="topic" id="f1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Ar, Mr, dan Konsep Mol</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box orange">
+              <strong>Ar</strong> = massa atom relatif terhadap ¹²C.<br>
+              <strong>Mr</strong> = jumlah Ar atom penyusun senyawa.<br><br>
+              <strong>1 mol = 6,02 × 10²³ partikel (Bilangan Avogadro)</strong><br>
+              mol = massa (gram) / Ar atau Mr<br>
+              Volume gas STP (0°C, 1 atm): 1 mol = 22,4 L<br>
+              Persamaan gas ideal: PV = nRT (R = 0,082 L.atm/mol.K)
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="f2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Perhitungan Kimia & Pereaksi Pembatas</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Koefisien reaksi ≡ perbandingan mol</strong><br>
+              <strong>Pereaksi Pembatas:</strong> zat yang habis lebih dulu, membatasi produk.<br>
+              Cara: hitung mol ÷ koefisien, nilai terkecil adalah pembatas.
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Pereaksi Pembatas</div>
+              <div class="example-body">
+                <div class="question">4 mol H₂ direaksikan dengan 3 mol O₂ membentuk H₂O. Tentukan pereaksi pembatas dan mol H₂O yang terbentuk.</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">Reaksi: <code>2H₂ + O₂ → 2H₂O</code>. H₂: 4/2=2; O₂: 3/1=3. <strong>Pembatas = H₂</strong> (nilai terkecil).</span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">Mol H₂O = (koef H₂O / koef H₂) × mol H₂ = <code>(2/2)×4 = 4 mol</code></span></div>
+                <div class="answer-box">Pereaksi pembatas: H₂; H₂O yang terbentuk = 4 mol</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="f3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Stoikiometri Larutan</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box orange">
+              <strong>Molaritas (M):</strong> mol zat terlarut / liter larutan.<br>
+              <strong>Pengenceran:</strong> M₁V₁ = M₂V₂<br>
+              <strong>Titrasi:</strong> M₁V₁n₁ = M₂V₂n₂ (n = valensi asam/basa atau koefisien H⁺/OH⁻).
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Titrasi Asam-Basa</div>
+              <div class="example-body">
+                <div class="question">20 mL HCl dititrasi dengan 25 mL NaOH 0,1 M. Tentukan konsentrasi HCl.</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">Reaksi 1:1 → <code>M_HCl × 20 × 1 = 0,1 × 25 × 1</code></span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text"><code>M_HCl = 2,5 / 20 = 0,125 M</code></span></div>
+                <div class="answer-box">Konsentrasi HCl = 0,125 M</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB G ===== -->
+      <div class="chapter" id="bab-g">
+        <div class="chapter-header">
+          <div class="chapter-icon g">💧</div>
+          <div class="chapter-title">
+            <h2>G. Larutan dan Reaksi dalam Larutan</h2>
+            <p>4 topik · Perilaku zat dalam air</p>
+          </div>
+        </div>
+
+        <div class="topic" id="g1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Elektrolit dan Nonelektrolit</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="concept-box"><div class="label">Elektrolit Kuat</div>Terionisasi sempurna (α=1). Asam kuat (HCl, H₂SO₄), basa kuat (NaOH), garam larut. Nyala terang.</div>
+              <div class="concept-box green"><div class="label">Elektrolit Lemah</div>Terionisasi sebagian (α<1). Asam lemah (CH₃COOH), basa lemah (NH₃). Nyala redup.</div>
+            </div>
+            <div class="formula-box">Derajat Ionisasi α = mol terionisasi / mol mula-mula. Nonelektrolit: α = 0.</div>
+          </div>
+        </div>
+
+        <div class="topic" id="g2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Asam-Basa Arrhenius & pH</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box green">
+              <strong>Asam:</strong> melepas H⁺ dalam air. <strong>Basa:</strong> melepas OH⁻.<br>
+              <strong>Kw = [H⁺][OH⁻] = 10⁻¹⁴ (25°C)</strong><br>
+              pH = –log [H⁺]; pOH = –log [OH⁻]; pH + pOH = 14<br><br>
+              <strong>Asam Kuat:</strong> [H⁺] = valensi × M<br>
+              <strong>Asam Lemah:</strong> [H⁺] = √(Ka × M)<br>
+              <strong>Basa Kuat:</strong> [OH⁻] = valensi × M<br>
+              <strong>Basa Lemah:</strong> [OH⁻] = √(Kb × M)
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="g3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Teori Bronsted-Lowry & Lewis</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <ul class="sub-list">
+              <li><strong>Bronsted-Lowry:</strong> Asam = donor H⁺, Basa = akseptor H⁺. Pasangan konjugasi: HCl/Cl⁻, H₂O/OH⁻, NH₄⁺/NH₃.</li>
+              <li><strong>Zat Amfoter (Amfiprotik):</strong> dapat sebagai asam atau basa. Contoh: H₂O, HCO₃⁻.</li>
+              <li><strong>Lewis:</strong> Asam = akseptor pasangan e⁻ (BF₃, AlCl₃), Basa = donor pasangan e⁻ (NH₃, F⁻).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic" id="g4">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">4</div>
+            <h3>Reaksi Pengendapan</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box purple">
+              <strong>Aturan Kelarutan (singkat):</strong><br>
+              • Semua garam Na⁺, K⁺, NH₄⁺, NO₃⁻ → larut.<br>
+              • Klorida larut, kecuali AgCl, PbCl₂, Hg₂Cl₂.<br>
+              • Sulfat larut, kecuali BaSO₄, PbSO₄.<br>
+              • Karbonat, fosfat, sulfida → umumnya tidak larut.
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Persamaan Ion Bersih</div>
+              <div class="example-body">
+                <div class="question">Tulis persamaan ion bersih untuk AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">Ion lengkap: <code>Ag⁺ + NO₃⁻ + Na⁺ + Cl⁻ → AgCl(s) + Na⁺ + NO₃⁻</code></span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">Coret ion spektator (Na⁺, NO₃⁻): <code>Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</code></span></div>
+                <div class="answer-box">Persamaan ion bersih: Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB H ===== -->
+      <div class="chapter" id="bab-h">
+        <div class="chapter-header">
+          <div class="chapter-icon h">🔥</div>
+          <div class="chapter-title">
+            <h2>H. Termokimia</h2>
+            <p>2 topik · Energi dalam reaksi kimia</p>
+          </div>
+        </div>
+
+        <div class="topic" id="h1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Sistem, Entalpi & Jenis Reaksi</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="concept-box red"><div class="label">Eksoterm (ΔH = −)</div>Kalor dilepas ke lingkungan, suhu lingkungan naik. Contoh: pembakaran, netralisasi asam-basa kuat.</div>
+              <div class="concept-box"><div class="label">Endoterm (ΔH = +)</div>Kalor diserap sistem, suhu lingkungan turun. Contoh: fotosintesis, pemanasan CaCO₃.</div>
+            </div>
+            <div class="formula-box">
+              <strong>Entalpi (H):</strong> energi dalam pada tekanan tetap. Hanya ΔH yang dapat diukur.<br>
+              <strong>ΔHf°</strong> = entalpi pembentukan standar (1 mol senyawa dari unsur). Unsur bebas ΔHf° = 0.<br>
+              <strong>ΔHc°</strong> = entalpi pembakaran standar.
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="h2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Hukum Hess & Perhitungan ΔH</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box orange">
+              <strong>Hukum Hess:</strong> ΔH reaksi hanya bergantung pada keadaan awal dan akhir, tidak pada jalannya reaksi.<br><br>
+              <strong>ΔH reaksi = Σ ΔHf° produk − Σ ΔHf° reaktan</strong><br>
+              <strong>ΔH reaksi = Σ energi ikatan putus − Σ energi ikatan terbentuk</strong>
+            </div>
+            <div class="example">
+              <div class="example-header">Contoh — Perhitungan ΔH</div>
+              <div class="example-body">
+                <div class="question">Hitung ΔH reaksi CH₄ + 2O₂ → CO₂ + 2H₂O, jika ΔHf° CH₄=−75, CO₂=−394, H₂O=−286 kJ/mol.</div>
+                <div class="step"><span class="step-num">1</span><span class="step-text">ΔH = <code>[−394 + 2(−286)] − [−75 + 0] = (−966) − (−75) = −891 kJ</code></span></div>
+                <div class="answer-box">ΔH = −891 kJ (reaksi eksoterm)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB I ===== -->
+      <div class="chapter" id="bab-i">
+        <div class="chapter-header">
+          <div class="chapter-icon i">⏱️</div>
+          <div class="chapter-title">
+            <h2>I. Kinetika Kimia</h2>
+            <p>2 topik · Cepat lambatnya reaksi</p>
+          </div>
+        </div>
+
+        <div class="topic" id="i1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Laju Reaksi & Orde</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Laju (v):</strong> perubahan konsentrasi per satuan waktu. v = −Δ[R]/Δt = +Δ[P]/Δt (M/s).<br>
+              <strong>Persamaan Laju:</strong> v = k [A]ᵐ [B]ⁿ<br>
+              Orde total = m + n (ditentukan dari eksperimen, bukan koefisien).
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="i2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Faktor Laju & Teori Tumbukan</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="mini-card"><div class="title">Konsentrasi</div><div class="val">Semakin besar, frekuensi tumbukan efektif naik → laju naik.</div></div>
+              <div class="mini-card"><div class="title">Luas Permukaan</div><div class="val">Semakin halus padatan, luas permukaan total makin besar → laju naik.</div></div>
+              <div class="mini-card"><div class="title">Suhu</div><div class="val">Kenaikan 10°C dapat melipatgandakan laju. Energi kinetik partikel meningkat.</div></div>
+              <div class="mini-card"><div class="title">Katalis</div><div class="val">Mempercepat reaksi dengan menurunkan energi aktivasi (Ea), tidak ikut bereaksi permanen.</div></div>
+            </div>
+            <div class="concept-box yellow">
+              <div class="label">Teori Tumbukan</div>
+              Reaksi terjadi jika partikel bertumbukan dengan <strong>orientasi tepat</strong> dan energi kinetik ≥ <strong>energi aktivasi (Ea)</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB J ===== -->
+      <div class="chapter" id="bab-j">
+        <div class="chapter-header">
+          <div class="chapter-icon j">⚖️</div>
+          <div class="chapter-title">
+            <h2>J. Kesetimbangan Kimia</h2>
+            <p>3 topik · Reaksi bolak-balik & kestabilan dinamis</p>
+          </div>
+        </div>
+
+        <div class="topic" id="j1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Kesetimbangan Dinamis & Kc/Kp</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box green">
+              <strong>Kesetimbangan Dinamis:</strong> laju maju = laju balik, konsentrasi konstan (mikroskopis tetap berlangsung).<br><br>
+              <strong>Kc</strong> = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ (konsentrasi)<br>
+              <strong>Kp</strong> = (P_Cᶜ P_Dᵈ) / (P_Aᵃ P_Bᵇ) (tekanan parsial gas)<br>
+              <strong>Kp = Kc (RT)^Δn</strong> (Δn = selisih koefisien gas)
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="j2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Prinsip Le Chatelier & Ion dalam Larutan</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box purple">
+              <strong>Le Chatelier:</strong> Sistem berusaha mengurangi pengaruh aksi dari luar.<br>
+              • Konsentrasi reaktan ↑ → geser kanan.<br>
+              • Tekanan ↑ (volume ↓) → geser ke jumlah mol gas lebih sedikit.<br>
+              • Suhu ↑ → geser ke arah endoterm.<br>
+              • Katalis: tidak menggeser kesetimbangan.
+            </div>
+            <div class="section-title">Hidrolisis & Buffer</div>
+            <ul class="sub-list">
+              <li><strong>Hidrolisis Garam:</strong> Garam dari asam kuat + basa lemah → pH < 7. Garam dari asam lemah + basa kuat → pH > 7.</li>
+              <li><strong>Buffer Asam:</strong> CH₃COOH + CH₃COONa → [H⁺] = Ka × (mol asam / mol basa konjugasi).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic" id="j3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Kelarutan & Hasil Kali Kelarutan (Ksp)</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box orange">
+              AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq), &nbsp; Ksp = [Ag⁺][Cl⁻]<br>
+              <strong>Hubungan s dan Ksp:</strong><br>
+              AgCl (1:1) → s = √Ksp<br>
+              PbI₂ (1:2) → Ksp = 4s³<br>
+              <strong>Pengaruh ion senama:</strong> menurunkan kelarutan.<br>
+              <strong>Syarat pengendapan:</strong> Qsp > Ksp → terbentuk endapan.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB K ===== -->
+      <div class="chapter" id="bab-k">
+        <div class="chapter-header">
+          <div class="chapter-icon k">⚡</div>
+          <div class="chapter-title">
+            <h2>K. Reaksi Redoks & Elektrokimia</h2>
+            <p>4 topik · Transfer elektron dan konversi energi</p>
+          </div>
+        </div>
+
+        <div class="topic" id="k1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Penyetaraan Reaksi Redoks</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Oksidasi:</strong> kenaikan bilangan oksidasi (biloks), pelepasan elektron.<br>
+              <strong>Reduksi:</strong> penurunan biloks, penerimaan elektron.<br><br>
+              <strong>Aturan Biloks Penting:</strong><br>
+              Unsur bebas = 0; H umumnya +1; O umumnya −2; Logam IA = +1, IIA = +2; F = −1.<br>
+              Jumlah biloks senyawa netral = 0; ion = muatannya.
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="k2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Sel Volta & Potensial Sel</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box green">
+              <strong>Sel Volta:</strong> reaksi redoks spontan → energi listrik.<br>
+              <strong>Anoda (−):</strong> oksidasi. <strong>Katoda (+):</strong> reduksi.<br>
+              <strong>E°sel = E°katoda − E°anoda</strong> (nilai reduksi)<br>
+              Reaksi spontan jika E°sel > 0.<br><br>
+              <strong>Deret Volta:</strong> Li K Ba Ca Na Mg Al Mn Zn Cr Fe Ni Sn Pb (H) Cu Hg Ag Pt Au<br>
+              Kiri → mudah teroksidasi (reduktor kuat), dapat mendesak logam di kanannya.
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="k3">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <h3>Sel Elektrolisis & Hukum Faraday</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box purple">
+              <strong>Elektrolisis:</strong> arus listrik memaksa reaksi redoks tak spontan.<br>
+              <strong>Anoda (+):</strong> oksidasi. <strong>Katoda (−):</strong> reduksi.<br><br>
+              <strong>Hukum Faraday I:</strong> w = (e × i × t) / 96500<br>
+              e = Ar / valensi (berat ekivalen)<br>
+              <strong>Hukum Faraday II:</strong> w₁ / w₂ = e₁ / e₂
+            </div>
+          </div>
+        </div>
+
+        <div class="topic" id="k4">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">4</div>
+            <h3>Korosi & Pencegahannya</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="section-title">Korosi Besi</div>
+            <p>Reaksi elektrokimia: Anoda: Fe → Fe²⁺ + 2e⁻; Katoda: O₂ + 2H₂O + 4e⁻ → 4OH⁻. Fe²⁺ + OH⁻ → Fe(OH)₂ → Fe₂O₃.xH₂O (karat).</p>
+            <div class="section-title">Pencegahan</div>
+            <ul class="sub-list">
+              <li><strong>Pelapisan:</strong> cat, plastik, minyak.</li>
+              <li><strong>Galvanisasi:</strong> melapisi dengan Zn (lebih reaktif).</li>
+              <li><strong>Proteksi Katodik:</strong> menghubungkan dengan logam lebih reaktif (anoda korban: Mg, Zn).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB L ===== -->
+      <div class="chapter" id="bab-l">
+        <div class="chapter-header">
+          <div class="chapter-icon l">🌍</div>
+          <div class="chapter-title">
+            <h2>L. Kimia Unsur</h2>
+            <p>2 topik · Sifat golongan dan kegunaan unsur</p>
+          </div>
+        </div>
+
+        <div class="topic" id="l1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Golongan Utama & Periode Ketiga</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <ul class="sub-list">
+              <li><strong>Golongan 1 (Alkali):</strong> Li, Na, K — sangat reaktif, lunak, nyala khas (Na kuning, K ungu). Reaksi dengan air → basa kuat + H₂.</li>
+              <li><strong>Golongan 2 (Alkali Tanah):</strong> Be, Mg, Ca — lebih keras, titik leleh lebih tinggi.</li>
+              <li><strong>Golongan 17 (Halogen):</strong> F₂, Cl₂, Br₂, I₂ — molekul diatomik, reaktif. Kereaktifan menurun ke bawah.</li>
+              <li><strong>Golongan 18 (Gas Mulia):</strong> He, Ne, Ar — sangat tidak reaktif (oktet lengkap).</li>
+              <li><strong>Periode 3:</strong> Na₂O basa, Al₂O₃ amfoter, SiO₂ asam, P₄O₁₀ & SO₃ asam kuat.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic" id="l2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Unsur Transisi & Dampak Lingkungan</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <ul class="sub-list">
+              <li><strong>Unsur Transisi:</strong> membentuk ion berwarna (Cu²⁺ biru, Fe³⁺ kuning), beberapa bilangan oksidasi, katalis (Fe dalam Haber, Ni, Pt).</li>
+              <li><strong>Pupuk:</strong> N (urea), P (TSP), K (KCl).</li>
+              <li><strong>Pencemaran:</strong> logam berat (Hg, Pb, Cd), SOx & NOx → hujan asam, CO₂ & CH₄ → efek rumah kaca.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BAB M ===== -->
+      <div class="chapter" id="bab-m">
+        <div class="chapter-header">
+          <div class="chapter-icon m">🧬</div>
+          <div class="chapter-title">
+            <h2>M. Kimia Organik</h2>
+            <p>2 topik · Senyawa karbon sebagai dasar kehidupan</p>
+          </div>
+        </div>
+
+        <div class="topic" id="m1">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <h3>Hidrokarbon & Gugus Fungsi</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">
+              <strong>Alkana (CₙH₂ₙ₊₂):</strong> semua ikatan tunggal. Reaksi: pembakaran, substitusi halogen.<br>
+              <strong>Alkena (CₙH₂ₙ):</strong> ikatan rangkap dua C=C. Reaksi: adisi (Markovnikov).<br>
+              <strong>Alkuna (CₙH₂ₙ₋₂):</strong> ikatan rangkap tiga. Reaksi adisi.<br>
+              <strong>Aromatik:</strong> Benzena (C₆H₆), reaksi substitusi elektrofilik.
+            </div>
+            <div class="section-title">Gugus Fungsi Penting</div>
+            <ul class="sub-list">
+              <li><strong>Alkohol (R–OH):</strong> −ol. Oksidasi primer → aldehida → asam karboksilat.</li>
+              <li><strong>Aldehida (R–CHO):</strong> −al. Reaksi Tollens (cermin perak) positif.</li>
+              <li><strong>Keton (R–CO–R'):</strong> −on. Tidak bereaksi dengan Tollens.</li>
+              <li><strong>Asam Karboksilat (R–COOH):</strong> asam alkanoat. Esterifikasi dengan alkohol.</li>
+              <li><strong>Ester (R–COOR'):</strong> alkil alkanoat. Aroma buah.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic" id="m2">
+          <div class="topic-header" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <h3>Isomer & Makromolekul</h3>
+            <span class="topic-toggle">▾</span>
+          </div>
+          <div class="topic-body">
+            <div class="grid-2">
+              <div class="mini-card"><div class="title">Isomer Kerangka</div><div class="val">Beda susunan rantai karbon. Contoh: butana & 2-metilpropana.</div></div>
+              <div class="mini-card"><div class="title">Isomer Posisi</div><div class="val">Beda posisi gugus fungsi. Contoh: 1-propanol & 2-propanol.</div></div>
+              <div class="mini-card"><div class="title">Isomer Geometri</div><div class="val">Cis-trans pada alkena. Contoh: cis-2-butena & trans-2-butena.</div></div>
+              <div class="mini-card"><div class="title">Isomer Fungsi</div><div class="val">Beda gugus fungsi, rumus molekul sama. Contoh: etanol & metoksi metana (C₂H₆O).</div></div>
+            </div>
+            <div class="section-title">Makromolekul</div>
+            <ul class="sub-list">
+              <li><strong>Polimer Adisi:</strong> polietilena (dari etena), PVC, teflon, polipropilena.</li>
+              <li><strong>Polimer Kondensasi:</strong> nilon, poliester, protein.</li>
+              <li><strong>Karbohidrat:</strong> monosakarida (glukosa), disakarida (sukrosa), polisakarida (amilum, selulosa).</li>
+              <li><strong>Protein:</strong> asam amino, ikatan peptida. Uji biuret → warna ungu.</li>
+              <li><strong>Lipid:</strong> trigliserida, reaksi penyabunan (saponifikasi).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div style="text-align:center;padding:40px 0;color:var(--text3);font-size:13px;">
+        <div style="font-size:28px;margin-bottom:12px;">🧪</div>
+        <p><strong style="color:var(--text2)">Kimia SMP–SMA Lengkap</strong></p>
+        <p>13 Bab · 50+ Topik · Rumus & Konsep Kunci</p>
+        <p style="margin-top:16px;font-size:12px;">Memahami kimia berarti memahami dunia di sekitar kita!</p>
+      </div>
+
+    </div><!-- .content -->
+  </div><!-- #main -->
+
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    function toggleTopic(header) {
+      const topic = header.parentElement;
+      topic.classList.toggle('open');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.topic').forEach((t, i) => {
+        if (i % 8 === 0 || i < 3) t.classList.add('open');
+      });
+    });
+
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+    document.getElementById('overlay').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+    });
+
+    const progressBar = document.getElementById('progress-bar');
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progressBar.style.width = pct + '%';
+      scrollBtn.classList.toggle('show', h.scrollTop > 400);
+    });
+
+    const sections = document.querySelectorAll('.topic, .chapter');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const link = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
